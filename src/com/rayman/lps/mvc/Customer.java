@@ -48,7 +48,7 @@ private Integer ID;
 	 private String firstName;
 	 
 	@Column(name="LastName")
-	 @NotNull(message="is required")
+	 @NotNull(message="Must be required")
 	 @Size(min=1,max=255,message="is required")
 	 private String lastName;
 	 
@@ -114,7 +114,7 @@ private Integer ID;
 	 
 	 @Column(name="EmailAddress")
 	 @NotNull(message="Must be required")
-	 @Pattern(regexp="^[a-z0-9]+@[a-z]+.[a-z]$",message="Invalid Email address")
+	 @Pattern(regexp="^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$",message="Invalid Email address")
 	 //must be a valid email address annotation required
 	 private String emailAddress;
 	 
@@ -163,7 +163,7 @@ private Integer ID;
 	 private String postalCode;
      
 	 @Column(name="ExperienceMonth")
-	 @NotNull(message="Must be required")
+	 @NotNull(message="required")
 	 private Integer experienceMonth;
 	 
 	 @Column(name="Designation")

@@ -84,10 +84,10 @@ top: 300px;
 						</p>
 						<div class="flex justify-center">
 							<button
-								class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+								class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
 								formaction="customer/showForm">Submit an Application</button>
 							<button
-								class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+								class="ml-4 inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
 								formaction="customer/viewForm">View An Application</button>
 						</div>
 					</div>
