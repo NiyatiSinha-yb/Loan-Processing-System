@@ -1,0 +1,100 @@
+package com.rayman.lps.mvc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.rayman.lps.dao.CustomerDAO;
+import com.rayman.lps.service.CustomerService;
+
+@Controller
+@RequestMapping("/customer")
+public class CustomerController {
+    
+	// add an init binder to convert trim input strings
+	//remove leading and trailing whitespace
+	//resolve issue for our validaton
+	
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder)
+	{
+		StringTrimmerEditor stringTrimmerEditor= new StringTrimmerEditor(true);
+		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+		
+	}
+	
+	//inject the DAO
+	//Autowired- Spring will scan for a component that implements CustomerDAO interface
+//	@Autowired
+//	private CustomerDAO customerDAO;
+//	
+	//We use service layer now
+	//need to inject customerservice instead
+	@Autowired
+	private CustomerService customerService;
+	@GetMapping("/viewForm")
+	public String viewForm(Model theModel)
+	{
+		//get customers from DAO
+		List<Customer> theCustomers=customerService.getCustomers();
+		//Add the customers to the model
+			theModel.addAttribute("customer",theCustomers);	
+	    return "viewApplication";
+	}
+	
+	
+	@RequestMapping("/homePage")
+	public String homePage(Model theModel)
+	{
+		
+		return "main-menu";
+	}
+	@RequestMapping("/showForm")
+	public String showForm(Model theModel)
+	{
+		theModel.addAttribute("customer",new Customer());
+		return "customer-form";
+	}
+	
+	@RequestMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("ID") int theId, Model theModel)
+	{
+		//get the customer from our service
+		Customer theCustomer=customerService.getCustomer(theId);
+		//set customer as a model attribute
+		theModel.addAttribute("customer",theCustomer);
+		//send over to the form
+		return "customer-form";
+	}
+	@RequestMapping("/processForm")
+	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer, BindingResult theBindingResult)
+	{
+		if(theBindingResult.hasErrors())
+		{
+			return "customer-form";
+		}
+		else
+		{
+			customerService.saveCustomer(theCustomer);
+			return "customer-confirmation";
+		}
+	}
+}
