@@ -22,6 +22,9 @@
 .container-fluid{
 top: 300px;
 }
+nav{
+margin-right: 20px;
+}
 </style>
 
 
@@ -31,24 +34,23 @@ top: 300px;
 	<form:form class="vertical" method="get">
 	<div class="container-fluid" align="center">
 		<div class="text-gray-700 body-font">
+	
 			<div
 				class="container mx-auto flex flex-wrap p-15 flex-col md:flex-row items-center">
 				<a
 					class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-					<svg xmlns="https://www.unispace.com/hubfs/10050_N53_webview.jpg"
-						stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-						viewBox="0 0 24 24">
-           <img
-							src="https://www.unispace.com/hubfs/10050_N53_webview.jpg"
-							style="width: 107px; height: 90px; border-radius: 90px/70px;">
-            </svg> <span class="ml-3 text-xl">ABC Bank</span>
+					
+           <img src="https://www.pngfind.com/pngs/m/154-1544968_bank-abc-logo-abc-bank-logo-png-transparent.png"
+							style=" width: 230px; height: 90px;">
+							
+          
 				</a>
 				<nav
-					class="md:ml-auto md:mr-auto flex flex-wrap items-right text-base justify-right" align="right">
-					<a class="mr-5 hover:text-gray-900">About Us</a> <a
-						class="mr-5 hover:text-gray-900">Contact Us</a> <a
-						class="mr-5 hover:text-gray-900">Join Us</a> <a
-						class="mr-5 hover:text-gray-900">Community Details</a>
+					class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+					<!--  <button class="mr-5 hover:text-gray-900" formaction="customer/contactUs">Contact Us</a> -->
+					 <button class="mr-5 hover:text-gray-700 " value="Submit" formaction="/lpswithhibernate/customer/contactUs"><b>Contact Us</b></button> 
+					 <button class="mr-5 hover:text-gray-700 " formaction="/lpswithhibernate/customer/help" ><b>Help</b></button>
+					 <!-- <button class="mr-5 hover:text-gray-900" formaction="/lpswithhibernate/customer/tnc">Terms & Conditions</button> -->
 				</nav>
 				
 			</div>
@@ -88,7 +90,7 @@ top: 300px;
 								formaction="customer/showForm">Submit an Application</button>
 							<button
 								class="ml-4 inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="customer/viewForm">View An Application</button>
+								formaction="customer/viewForm">View All Applications</button>
 						</div>
 					</div>
 					

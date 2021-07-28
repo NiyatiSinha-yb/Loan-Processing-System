@@ -14,9 +14,9 @@
 
 .h2 {
 	left: 10vw;
-	font-family: Georgia;
+	font-family: Verdana ;
 	margin-left: 235px;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .left {
@@ -29,7 +29,7 @@
 
 body {
 	background-image:
-		url("https://blakesguam.com/wp-content/uploads/2016/08/photodune-6207464-geometric-polygon-abstract-background-l-4.jpg");
+		url("https://t4.ftcdn.net/jpg/03/20/85/41/360_F_320854192_D3oAI22yNude4hgcYYPjLzufeFl3RZDU.jpg");
 	background-repeat: no-repeat;
 	background-size: 1600px 1500px;
 }
@@ -118,7 +118,7 @@ body {
 
 .button1 {
 	position: absolute;
-	top: 1400px;
+	top: 1440px;
 	right: 200px;
 	border: 3px solid black;
 	color: black;
@@ -133,7 +133,7 @@ body {
 
 .button2 {
 	position: absolute;
-	top: 1400px;
+	top: 1440px;
 	right: 90px;
 	border: 3px solid black;
 	color: black;
@@ -147,7 +147,7 @@ body {
 }
 
 .button1:hover, .button2:hover {
-	background-color: gray;
+	background-color: #778899;
 	color: white;
 }
 
@@ -171,6 +171,7 @@ body {
 			modelAttribute="customer">
 			<form:hidden path="ID" />
 			<h2 class="h2">Submit new application</h2>
+			<br>
 			<div class="row">
 				<div class="left">
 					<table style="margin-top: -130px;">
@@ -352,7 +353,7 @@ body {
 				</div>
 			</div>
 
-			<br>
+			
 			<button class="button1" value="Submit">
 				<b>Submit</b>
 			</button>

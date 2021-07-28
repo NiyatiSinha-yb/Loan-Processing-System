@@ -25,7 +25,7 @@ public class TestDbServlet extends HttpServlet {
 
 		// setup connection variables
 		String user = "root";
-		String pass = "Ray$1742";
+		String pass = "root";
 		
 		String jdbcUrl = "jdbc:mysql://localhost:3306/testdb?useSSL=false&serverTimezone=UTC";
 		String driver = "com.mysql.cj.jdbc.Driver";
