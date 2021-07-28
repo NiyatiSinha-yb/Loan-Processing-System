@@ -80,16 +80,22 @@ a:link {
 <th>First Name</th>
 <th>Email Address</th>
 <th>Submitted Date</th>
+<th>Action</th>
 </tr>
 <c:forEach var="tempCustomer" items="${customer}">
 <c:url var="updateLink" value="/customer/showFormForUpdate">
 <c:param name="ID" value="${tempCustomer.ID}"/>
+</c:url>
+<!-- Delete link -->
+<c:url var="deleteLink" value="/customer/showFormForDelete">
+<c:param name="customerID" value="${tempCustomer.ID}"/>
 </c:url>
 <tr>
 <td><a href="${updateLink}">${tempCustomer.ID}</a></td>
 <td>${tempCustomer.firstName}</td>
 <td>${tempCustomer.emailAddress}</td>
 <td>${tempCustomer.submitted_Date}</td>
+<td><a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a></td>
 </tr>
 </c:forEach>
 </table>

@@ -74,7 +74,7 @@ public class CustomerController {
 		return "customer-form";
 	}
 	
-	@RequestMapping("/showFormForUpdate")
+	@GetMapping("/showFormForUpdate")
 	public String showFormForUpdate(@RequestParam("ID") int theId, Model theModel)
 	{
 		//get the customer from our service
@@ -83,6 +83,12 @@ public class CustomerController {
 		theModel.addAttribute("customer",theCustomer);
 		//send over to the form
 		return "customer-form";
+	}
+	@GetMapping("/showFormForDelete")
+	public String deleteCustomer(@RequestParam("customerID") int theId)
+	{
+		customerService.deleteCustomer(theId);
+		return "redirect:viewForm";
 	}
 	@RequestMapping("/processForm")
 	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer, BindingResult theBindingResult)
