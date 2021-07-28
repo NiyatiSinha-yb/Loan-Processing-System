@@ -67,6 +67,24 @@ public class CustomerController {
 		
 		return "main-menu";
 	}
+	
+	@RequestMapping("/contactUs")
+	public String contactUs(Model theModel)
+	{
+		return "ContactUs";
+	}
+	
+	@RequestMapping("/help")
+	public String help(Model theModel)
+	{
+		return "Help";
+	}
+	
+	@RequestMapping("tnc")
+	public String tnc(Model theModel)
+	{
+		return "Tnc";
+	}
 	@RequestMapping("/showForm")
 	public String showForm(Model theModel)
 	{

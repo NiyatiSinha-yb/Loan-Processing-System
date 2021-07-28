@@ -10,8 +10,16 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <title>View Application</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+	rel="stylesheet">
+
+</head>
 <style>
 #customers {
   font-family: Arial, Helvetica, sans-serif;
@@ -29,13 +37,26 @@ a:link {
   border: 2px solid #ddd;
   padding: 8px;
   text-align: center;
-  color: black
+  color: black;
 }
-.button1 {
+#button1 {
 	position: absolute;
-	border: 3px solid black;
+	border: 2px solid gray;
+	right: 400px;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 15px;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+#button2 {
+	position: absolute;
+	border: 2px solid gray;
 	right: 300px;
-  color: black;
+  color: white;
   padding: 10px 25px;
   text-align: center;
   font-size: 15px;
@@ -44,20 +65,8 @@ a:link {
   cursor: pointer;
   border-radius: 16px;
 }
-.button2 {
-	position: absolute;
-	border: 3px solid black;
-	right: 500px;
-  color: black;
-  padding: 10px 25px;
-  text-align: center;
-  font-size: 15px;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
-}
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:nth-child(even){background-color: #F8F8FF;}
 
 #customers tr:hover {background-color: #ddd;}
 
@@ -65,7 +74,7 @@ a:link {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: black;
+  background-color: #778899;
   color: white;
   text-align: center;
 }
@@ -101,8 +110,15 @@ a:link {
 </table>
 <br>
 <form:form  method="post">
-<button class="button1"  formaction="/lpswithhibernate">Back</button>
-<button class="button2" formaction="/lpswithhibernate/customer/showForm">Add a customer</button>
+
+<button class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+  formaction="/lpswithhibernate/customer/showForm" id="button1"><b>Add a customer</b></button>
+<button class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+ formaction="/lpswithhibernate/" id="button2"><b>Back</b></button>
+ 
+
+<!-- <button class="button1"  formaction="/lpswithhibernate">Back</button>
+<button class="button2" formaction="/lpswithhibernate/customer/showForm">Add a customer</button> -->
 </form:form>
 </body>
 </html>
