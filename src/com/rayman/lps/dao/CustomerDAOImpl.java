@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rayman.lps.mvc.Customer;
+import com.rayman.lps.util.SortUtils;
 
 //handles exception translation
 //we need for spring to do component scan
@@ -30,7 +31,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		Session currentSession=sessionFactory.getCurrentSession();
 		//create a query
 		//sort by first Name
-		Query<Customer> theQuery=currentSession.createQuery("from Customer order by firstName",Customer.class);
+		Query<Customer> theQuery=currentSession.createQuery("from Customer",Customer.class);
 		System.out.println("theQuery established");
 		//execute query and get result list
 		List<Customer> customers=theQuery.getResultList();
@@ -67,7 +68,69 @@ public class CustomerDAOImpl implements CustomerDAO {
 		theQuery.setParameter("customerId", theId);
 		theQuery.executeUpdate();
 	}
-   
+
+
+	@Override
+    public List<Customer> searchCustomers(String theSearchName) {
+        // get the current hibernate session
+        Session currentSession = sessionFactory.getCurrentSession();
+        
+        Query<Customer> theQuery = null;
+        
+        //
+        // only search by name if theSearchName is not empty
+        //
+        if (theSearchName != null && theSearchName.trim().length() > 0) {
+            // search for firstName or lastName ... case insensitive
+            theQuery =currentSession.createQuery("from Customer where lower(firstName) like :theName or lower(lastName) like :theName", Customer.class);
+            theQuery.setParameter("theName", "%" + theSearchName.toLowerCase() + "%");
+        }
+        else {
+            // theSearchName is empty ... so just get all customers
+            theQuery =currentSession.createQuery("from Customer", Customer.class);            
+        }
+        
+        // execute query and get result list
+        List<Customer> customers = theQuery.getResultList();
+                
+        // return the results        
+        return customers;
+        
+    }
+
+
+	@Override
+	public List<Customer> getSortedCustomers(int theSortField) {
+		// get the current hibernate session
+				Session currentSession = sessionFactory.getCurrentSession();
+						
+				// determine sort field
+				String theFieldName = null;
+				
+				switch (theSortField) {
+					case SortUtils.FIRST_NAME: 
+						theFieldName = "firstName";
+						break;
+					
+					case SortUtils.EMAIL:
+						theFieldName = "emailAddress";
+						break;
+					default:
+						// if nothing matches the default to sort by lastName
+						theFieldName = "firstName";
+				}
+				
+				// create a query  
+				String queryString = "from Customer order by " + theFieldName;
+				Query<Customer> theQuery = 
+						currentSession.createQuery(queryString, Customer.class);
+				
+				// execute query and get result list
+				List<Customer> customers = theQuery.getResultList();
+						
+				// return the results		
+				return customers;
+	}
   
 	
 

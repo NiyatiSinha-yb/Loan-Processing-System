@@ -6,7 +6,7 @@ import com.rayman.lps.mvc.Customer;
 
 public interface CustomerDAO {
 
-	public List<Customer> getCustomers();
+
 
 	public Customer getCustomer(int theId);
 
@@ -14,4 +14,11 @@ public interface CustomerDAO {
 
 	public void deleteCustomer(int theId);
 
+	public List<Customer> searchCustomers(String theSearchName);
+
+	public List<Customer> getSortedCustomers(int theSortField);
+
+	public List<Customer> getCustomers();
+
 }
+

@@ -22,8 +22,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import com.rayman.lps.dao.CustomerDAO;
 import com.rayman.lps.service.CustomerService;
+import com.rayman.lps.util.SortUtils;
 
 @Controller
 @RequestMapping("/customer")
@@ -108,6 +110,17 @@ public class CustomerController {
 		customerService.deleteCustomer(theId);
 		return "redirect:viewForm";
 	}
+	
+	@GetMapping("/search")
+    public String searchCustomers(@RequestParam("theSearchName") String theSearchName,
+                                    Model theModel) {
+        // search customers from the service
+        List<Customer> theCustomers = customerService.searchCustomers(theSearchName);
+                
+        // add the customers to the model
+        theModel.addAttribute("customer", theCustomers);
+        return "viewApplication";        
+    }
 	@RequestMapping("/processForm")
 	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer, BindingResult theBindingResult)
 	{
@@ -120,5 +133,27 @@ public class CustomerController {
 			customerService.saveCustomer(theCustomer);
 			return "customer-confirmation";
 		}
+	}
+	
+	@GetMapping("/list")
+	public String listCustomers(Model theModel, @RequestParam(required=false) String sort) {
+		
+		// get customers from the service
+		List<Customer> theCustomers = null;
+		
+		// check for sort field
+		if (sort != null) {
+			int theSortField = Integer.parseInt(sort);
+			theCustomers = customerService.getSortedCustomers(theSortField);			
+		}
+		else {
+			// no sort field provided ... default to sorting by first name
+			theCustomers = customerService.getSortedCustomers(SortUtils.FIRST_NAME);
+		}
+		
+		// add the customers to the model
+		theModel.addAttribute("customer", theCustomers);
+		
+		return "viewApplication";
 	}
 }
