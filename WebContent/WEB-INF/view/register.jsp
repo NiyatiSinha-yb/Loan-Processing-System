@@ -22,7 +22,6 @@
 
 </head>
 
-</head>
 <body>
 	<div class="container">
 		<form:form method="post" 

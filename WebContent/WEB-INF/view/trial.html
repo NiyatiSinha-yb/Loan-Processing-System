@@ -1,0 +1,452 @@
+<!--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+<link rel="stylesheet"
+	href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!--Font Awesome (added because you use icons in your prepend/append)-->
+<link rel="stylesheet"
+	href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+
+
+	
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+
+
+
+</head>
+
+<style>
+body {
+	color: #000;
+	overflow-x: hidden;
+	height: 130%;
+	background-image:
+		url("https://source.unsplash.com/1080x1980/?bank,money");
+	background-repeat: no-repeat;
+	background-size: 120% 120%
+}
+
+.card {
+	background-color: white;
+	padding: 40px 40px;
+	margin-left: 50px;
+	/* margin-right: -300px;
+	margin-left: 100px;
+	margin-top: 60px;
+	margin-bottom: 60px; */
+	width: 80%;
+	border: none !important;
+	box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+	border: none !important;
+}
+
+.blue-text {
+	color: #00BCD4
+}
+
+.form-control-label {
+	margin-bottom: 0
+}
+
+input, textarea, button {
+	padding: 8px 15px;
+	border-radius: 5px !important;
+	margin: 5px 0px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	font-size: 18px !important;
+	font-weight: 300
+}
+
+input:focus, textarea:focus {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: 1px solid #00BCD4;
+	outline-width: 0;
+	font-weight: 400
+}
+
+.btn-block {
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 400;
+	height: 43px;
+	cursor: pointer
+}
+
+.btn-block:hover {
+	color: #fff;
+}
+
+.form-card {
+	
+}
+
+button:focus {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	outline-width: 0
+}
+</style>
+
+<body>
+	<div class="container-fluid px-1 py-5 mx-auto">
+		<div class="row d-flex justify-content-center">
+			<div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+				<h3>Request a Demo</h3>
+				<p class="blue-text">
+					Just answer a few questions<br> so that we can personalize the
+					right experience for you.
+				</p>
+				<div class="container">
+
+					<div class="card">
+						<h5 class="text-center mb-4">Powering world-class companies</h5>
+						<form class="form-card" onsubmit="event.preventDefault()">
+							<div class="row justify-content-between text-left">
+								<div class="form-group col-sm-3 flex-column d-flex">
+									<label class="form-control-label px-3">First name<span
+										class="text-danger"> *</span></label> <input type="text" id="fname"
+										name="fname" placeholder="Enter your first name"
+										onblur="validate(1)">
+								</div>
+								<div class="form-group col-sm-3 flex-column d-flex">
+									<label class="form-control-label px-3">Middle name<span
+										class="text-danger"> *</span></label> <input type="text" id="mname"
+										name="mname" placeholder="Enter your middle name"
+										onblur="validate(2)">
+								</div>
+								<div class="form-group col-sm-3 flex-column d-flex">
+									<label class="form-control-label px-3">Last name<span
+										class="text-danger"> *</span></label> <input type="text" id="lname"
+										name="lname" placeholder="Enter your last name"
+										onblur="validate(2)">
+								</div>
+
+								<div>
+									
+								
+									
+ -->
+									<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+									<div class="bootstrap-iso">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-md-6 col-sm-6 col-xs-12">
+													<form method="post">
+														<div class="form-group ">
+															<label class="control-label " for="date"> Date </label>
+															<div class="input-group">
+																<div class="input-group-addon">
+																	<i class="fa fa-calendar"> </i>
+																</div>
+																<input class="form-control" id="date" name="date"
+																	placeholder="DD-MM-YYYY" type="text" />
+															</div>
+														</div>
+														<!-- <div class="form-group">
+															<div>
+																<button class="btn btn-primary " name="submit"
+																	type="submit">Submit</button>
+															</div>
+														</div> -->
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+									<!--  jQuery -->
+									<script type="text/javascript"
+										src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+							
+									<script type="text/javascript"
+										src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+									<!-- <link rel="stylesheet"
+										href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" /> -->
+									 
+									 <script>
+										$(document)
+												.ready(
+														function() {
+															var date_input = $('input[name="date"]'); //our date input has the name "date"
+															var container = $('.bootstrap-iso form').length > 0 ? $(
+																	'.bootstrap-iso form')
+																	.parent()
+																	: "body";
+															var options = {
+																format : 'dd-mm-yyyy',
+																container : container,
+																todayHighlight : true,
+																autoclose : true,
+															};
+															date_input
+																	.datepicker(options);
+														})
+									</script>
+								</div>
+
+								<div class="bootstrap-iso">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<form method="post">
+													<div class="form-group ">
+														<label class="control-label " for="select">
+															Maritial Status </label> <select class="select form-control"
+															id="select" name="select">
+															<option value="Single">Single</option>
+															<option value="Married">Married</option>
+															<option value="Seperated">Seperated</option>
+															<option value="Divorced">Divorced</option>
+															<option value="Widow">Widow</option>
+														</select>
+													</div>
+													
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="bootstrap-iso">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<form method="post">
+													<div class="form-group ">
+														<label class="control-label " for="number"> SSN
+															Number </label> <input class="form-control" id="number"
+															name="number" placeholder="SSN Number" type="text" />
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="number1"> Loan
+															Amount </label> <input class="form-control" id="number1"
+															name="number1" placeholder="Loan Amount in $" type="text" />
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="select"> Loan
+															purpose </label> <select class="select form-control" id="select"
+															name="select">
+															<option value="Debt">Debt</option>
+															<option value="Home Loan">Home Loan</option>
+															<option value="Educational Loan">Educational
+																Loan</option>
+															<option value="Personal Loan">Personal Loan</option>
+														</select>
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="message">
+															Description </label>
+														<textarea class="form-control" cols="40" id="message"
+															name="message" placeholder="Loan Application Reason"
+															rows="10"></textarea>
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="number2"> Home
+															Phone </label> <input class="form-control" id="number2"
+															name="number2"
+															placeholder="Enter your 10 digit residential contact number"
+															type="text" />
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="number3">
+															Office Phone </label> <input class="form-control" id="number3"
+															name="number3"
+															placeholder="Enter your 10 digit office contact number"
+															type="text" />
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="number4">
+															Mobile </label> <input class="form-control" id="number4"
+															name="number4"
+															placeholder="Enter your 10 digit personal contact number"
+															type="text" />
+													</div>
+													<div class="form-group ">
+														<label class="control-label requiredField" for="email">
+															Email Address <span class="asteriskField"> * </span>
+														</label> <input class="form-control" id="email" name="email"
+															placeholder="username@domain" type="text" />
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="text"> Address
+															Line 1 </label> <input class="form-control" id="text" name="text"
+															placeholder="House Number" type="text" />
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="text2"> Address
+															Line 2 </label> <input class="form-control" id="text2"
+															name="text2" placeholder="Street, Colony" type="text" />
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="subject"> City
+														</label> <input class="form-control" id="subject" name="subject"
+															placeholder="City" type="text" />
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="subject1">
+															State </label> <input class="form-control" id="subject1"
+															name="subject1" placeholder="State" type="text" />
+													</div>
+													<div class="form-group ">
+														<label class="control-label " for="number5">
+															Postal Code </label> <input class="form-control" id="number5"
+															name="number5"
+															placeholder="Enter your 5 digit postal code" type="text" />
+													</div>
+													<div class="form-group">
+														<div>
+															<button class="btn btn-primary " name="submit"
+																type="submit">Submit</button>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="row justify-content-between text-left">
+									<div class="form-group col-sm-6 flex-column d-flex">
+										<label class="form-control-label px-3">Business email<span
+											class="text-danger"> *</span></label> <input type="text" id="email"
+											name="email" placeholder="" onblur="validate(3)">
+									</div>
+									<div class="form-group col-sm-6 flex-column d-flex">
+										<label class="form-control-label px-3">Phone number<span
+											class="text-danger"> *</span></label> <input type="text" id="mob"
+											name="mob" placeholder="" onblur="validate(4)">
+									</div>
+								</div>
+								<div class="row justify-content-between text-left">
+									<div class="form-group col-sm-6 flex-column d-flex">
+										<label class="form-control-label px-3">Job title<span
+											class="text-danger"> *</span></label> <input type="text" id="job"
+											name="job" placeholder="" onblur="validate(5)">
+									</div>
+								</div>
+								<div class="row justify-content-between text-left">
+									<div class="form-group col-12 flex-column d-flex">
+										<label class="form-control-label px-3">What would you
+											be using Flinks for?<span class="text-danger"> *</span>
+										</label> <input type="text" id="ans" name="ans" placeholder=""
+											onblur="validate(6)">
+									</div>
+								</div>
+								<div class="row justify-content-end">
+									<div class="form-group col-sm-6">
+										<button type="submit" class="btn-block btn-primary">Request
+											a demo</button>
+									</div>
+								</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <script>
+			function validate(val) {
+				v1 = document.getElementById("fname");
+				v2 = document.getElementById("lname");
+				v3 = document.getElementById("email");
+				v4 = document.getElementById("mob");
+				v5 = document.getElementById("job");
+				v6 = document.getElementById("ans");
+
+				flag1 = true;
+				flag2 = true;
+				flag3 = true;
+				flag4 = true;
+				flag5 = true;
+				flag6 = true;
+
+				if (val >= 1 || val == 0) {
+					if (v1.value == "") {
+						v1.style.borderColor = "red";
+						flag1 = false;
+					} else {
+						v1.style.borderColor = "green";
+						flag1 = true;
+					}
+				}
+
+				if (val >= 2 || val == 0) {
+					if (v2.value == "") {
+						v2.style.borderColor = "red";
+						flag2 = false;
+					} else {
+						v2.style.borderColor = "green";
+						flag2 = true;
+					}
+				}
+				if (val >= 3 || val == 0) {
+					if (v3.value == "") {
+						v3.style.borderColor = "red";
+						flag3 = false;
+					} else {
+						v3.style.borderColor = "green";
+						flag3 = true;
+					}
+				}
+				if (val >= 4 || val == 0) {
+					if (v4.value == "") {
+						v4.style.borderColor = "red";
+						flag4 = false;
+					} else {
+						v4.style.borderColor = "green";
+						flag4 = true;
+					}
+				}
+				if (val >= 5 || val == 0) {
+					if (v5.value == "") {
+						v5.style.borderColor = "red";
+						flag5 = false;
+					} else {
+						v5.style.borderColor = "green";
+						flag5 = true;
+					}
+				}
+				if (val >= 6 || val == 0) {
+					if (v6.value == "") {
+						v6.style.borderColor = "red";
+						flag6 = false;
+					} else {
+						v6.style.borderColor = "green";
+						flag6 = true;
+					}
+				}
+
+				flag = flag1 && flag2 && flag3 && flag4 && flag5 && flag6;
+
+				return flag;
+			}
+		</script> -->
+</body>
