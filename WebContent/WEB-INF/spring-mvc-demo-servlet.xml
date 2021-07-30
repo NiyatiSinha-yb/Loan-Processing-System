@@ -33,6 +33,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springf
     <bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
     <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/testdb"/>
+    
     <property name="user" value="root"/>
     <property name="password" value="Ray$1742"/>
     <property name="minPoolSize" value="5"/>
@@ -40,6 +41,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springf
       <property name="maxIdleTime" value="30000"/>
     
     </bean>
+    
+    
     
    <!-- Step-2 Setup hibernate session factory -->
    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
@@ -53,10 +56,13 @@ xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springf
    </property>
    </bean>
    
+   
+   
    <!-- Step-3 Setting up the transaction manager  -->
    <bean id="myTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
    <property name="sessionFactory" ref="sessionFactory"></property>
    </bean>
+   
    
     <!-- Step-4 Enable configuration of transactional behaviour based on annotattions-->
    

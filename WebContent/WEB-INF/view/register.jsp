@@ -24,7 +24,7 @@
 
 <body>
 	<div class="container">
-		<form:form method="post" 
+		<form:form method="get" 
 			modelAttribute="user">
 			
 			<div class="row text-center" style="color: tomato;">
