@@ -22,7 +22,6 @@
 
 </head>
 
-</head>
 <body>
 	<div class="container">
 		<div class="row text-center" style="color: tomato;">
