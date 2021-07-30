@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
  pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +16,7 @@
 
 </head>
 <body>
+
  <div class="container">
   <div class="row col-md-10 col-md-offset-3">
    <div class="card card-body">
@@ -22,5 +24,6 @@
    </div>
   </div>
  </div>
+
 </body>
 </html>

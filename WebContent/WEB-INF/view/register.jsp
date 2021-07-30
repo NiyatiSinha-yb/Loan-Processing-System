@@ -25,53 +25,55 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row text-center" style="color: tomato;">
-			<h2>User Registration with JSP, Servlet and Hibernate</h2>
-		</div>
-		<hr>
-		<div class="row col-md-10 col-md-offset-3">
+		<form:form method="post" 
+			modelAttribute="user">
+			
+			<div class="row text-center" style="color: tomato;">
+				<h2>User Registration with JSP, Servlet and Hibernate</h2>
+			</div>
+			<hr>
+			<div class="row col-md-10 col-md-offset-3">
 
-			<div class="card card-body">
+				<div class="card card-body">
 
-				<h2>User Register Form</h2>
-				<div class="col-md-8 col-md-offset-3">
+					<h2>User Register Form</h2>
+					<div class="col-md-8 col-md-offset-3">
 
-					<form action= "<%=request.getContextPath()%>/login"
-						method="get">
 
 						<div class="form-group">
-							<label for="uname">First Name:</label> <input type="text"
+							First Name: <input type="text"
 								class="form-control" id="uname" placeholder="First Name"
 								name="firstName" required>
 						</div>
 
 						<div class="form-group">
-							<label for="uname">Last Name:</label> <input type="text"
+							Last Name: <input type="text"
 								class="form-control" id="uname" placeholder="last Name"
 								name="lastName" required>
 						</div>
 
 						<div class="form-group">
-							<label for="uname">User Name:</label> <input type="text"
+							User Name:<input type="text"
 								class="form-control" id="username" placeholder="User Name"
-								name="username" required>
+								name="userName" required>
 						</div>
 
 						<div class="form-group">
-							<label for="uname">Password:</label> <input type="password"
+							Password:<input type="password"
 								class="form-control" id="password" placeholder="Password"
 								name="password" required>
 						</div>
 						<!-- <button type="submit" class="btn btn-primary"
 							on-cl>Submit</button> -->
-								<button
-								class="ml-4 inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="/user/register">Submit</button>
-						</form>	
+						<button
+							class="ml-4 inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+							formaction="/lpswithhibernate/user/processForm">Submit</button>
+
+					</div>
+
 				</div>
-		
 			</div>
-		</div>
+		</form:form>
 	</div>
 </body>
 </html>
