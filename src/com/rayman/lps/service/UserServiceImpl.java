@@ -9,11 +9,13 @@ import com.rayman.lps.dao.UserDAO;
 import com.rayman.lps.mvc.Customer;
 import com.rayman.lps.mvc.User;
 
+
 @Service
 public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDAO userDAO;
+	
 	@Override
 	@Transactional
 	public void saveUser(User theUser) {
