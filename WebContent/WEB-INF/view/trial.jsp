@@ -1,6 +1,6 @@
-<!--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>-->
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,20 +47,23 @@ body {
 	overflow-x: hidden;
 	height: 130%;
 	background-image:
-		url("https://source.unsplash.com/1980x1980/?bank,money");
+		/*  url("https://source.unsplash.com/1515x2990/?money,bank, cash,twenty dollar");
+		url("https://thumbs.dreamstime.com/b/vertical-dome-utah-state-capital-building-pale-blue-sky-background-grand-columns-balcony-illuminated-bright-147968946.jpg"); */
+		url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/483000/483736-capitol-hill-utah.jpg"); 
 	background-repeat: no-repeat;
-	background-size: 120% 120%
+	   background-size: 260% 100%   
 }
 
 .card {
 	background-color: white;
 	padding: 40px 40px;
-	/* margin-left: 250px; */
-	/* margin-right: -300px;
+	/* margin-left: 450px; 
+	 margin-right: -300px;
 	margin-left: 100px;
 	margin-top: 60px;
 	margin-bottom: 60px; */
-	width: 60%;
+	opacity: 95%;
+	width: 80%;
 	border: none;
 	box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
 	border: none !important;
@@ -92,7 +95,9 @@ input:focus, textarea:focus {
 	outline-width: 0;
 	font-weight: 400
 }
-
+option{
+color: black;
+}
 
 .btn-block {
 	text-transform: uppercase;
@@ -124,7 +129,7 @@ button:focus {
 			<h5 class="text-center mb-4">
 				<b><i>Loan Applicant Entry Form</i></b>
 			</h5>
-			<form class="form-card" method="post" onsubmit="event.preventDefault()">
+			<form class="form-card" method="post" action="processForm" modelAttribute="customer" <%-- onsubmit="event.preventDefault() --%>">
 				
 				<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
 				<div class="bootstrap-iso">
@@ -152,7 +157,7 @@ button:focus {
 							<div class="form-group ">
 								<label class="control-label " for="name2"> Last Name </label> <input
 									class="form-control" id="name2" name="name2"
-									placeholder="Enter your last name" type="text" />
+									placeholder="Enter your last name" type="text" required/>
 							</div>
 							
 								<div class="form-group ">
@@ -162,7 +167,7 @@ button:focus {
 											<i class="fa fa-calendar"> </i>
 										</div>
 										<input class="form-control" id="date" name="date"
-											placeholder="DD-MM-YYYY" type="date" />
+											placeholder="DD-MM-YYYY" required/>
 									</div>
 								</div>
 						
@@ -216,14 +221,16 @@ button:focus {
 							</div>
 							
 								<div class="form-group ">
-									<label class="control-label " for="select"> Maritial
+									<label class="control-label " for="select" > Maritial
 										Status </label> <select class="select form-control" id="select"
-										name="select">
+										name="select"  style="font-size:18px; color:gray">
+										<option value="" disabled selected hidden>Open this select menu</option>
 										<option value="Single">Single</option>
 										<option value="Married">Married</option>
 										<option value="Seperated">Seperated</option>
 										<option value="Divorced">Divorced</option>
 										<option value="Widow">Widow</option>
+										
 									</select>
 								</div>
 
@@ -231,8 +238,9 @@ button:focus {
 							
 								<div class="form-group ">
 									<label class="control-label " for="number"> SSN Number
-									</label> <input class="form-control" id="number" name="number"
-										placeholder="SSN Number" type="number" />
+									</label> <input class="form-control" id="number" path="ssnNumber" name="number" 
+										placeholder="SSN Number" type="number" required />
+										<form:errors path="ssnNumber"></form:errors>
 								</div>
 
 								<br> <br>
@@ -244,12 +252,13 @@ button:focus {
 								<div class="form-group ">
 									<label class="control-label " for="number1"> Loan
 										Amount </label> <input class="form-control" id="number1"
-										name="number1" placeholder="Loan Amount in $" type="number" />
+										name="number1" placeholder="Loan Amount in $" type="number" required/>
 								</div>
 								<div class="form-group ">
 									<label class="control-label " for="select"> Loan
 										purpose </label> <select class="select form-control" id="select"
-										name="select">
+										name="select" style="font-size:18px; color:gray" required >
+										<option value="" disabled selected hidden>Open this select menu</option>
 										<option value="Debt">Debt</option>
 										<option value="Home Loan">Home Loan</option>
 										<option value="Educational Loan">Educational Loan</option>
@@ -274,26 +283,26 @@ button:focus {
 									<label class="control-label " for="number2"> Home Phone
 									</label> <input class="form-control" id="number2" name="number2"
 										placeholder="Enter your 10 digit residential contact number"
-										type="number" />
+										type="number" required/>
 								</div>
 								<div class="form-group ">
 									<label class="control-label " for="number3"> Office
 										Phone </label> <input class="form-control" id="number3" name="number3"
 										placeholder="Enter your 10 digit office contact number"
-										type="number" />
+										type="number" required/>
 								</div>
 								<div class="form-group ">
 									<label class="control-label " for="number4"> Mobile </label> <input
 										class="form-control" id="number4" name="number4"
 										placeholder="Enter your 10 digit personal contact number"
-										type="number" />
+										type="number" required/>
 										
 								</div>
 								<div class="form-group ">
 									<label class="control-label requiredField" for="email">
 										Email Address <span class="asteriskField"> * </span>
 									</label> <input class="form-control" id="email" name="email"
-										placeholder="username@domain" type="text" />
+										placeholder="username@domain" type="text" required/>
 								</div>
 								<br> <br>
 								<div class=blue-text>
@@ -304,7 +313,7 @@ button:focus {
 								<div class="form-group ">
 									<label class="control-label " for="text"> Address Line
 										1 </label> <input class="form-control" id="text" name="text"
-										placeholder="House Number" type="text" />
+										placeholder="House Number" type="text" required/>
 								</div>
 								<div class="form-group ">
 									<label class="control-label " for="text2"> Address Line
@@ -314,17 +323,17 @@ button:focus {
 								<div class="form-group ">
 									<label class="control-label " for="subject"> City </label> <input
 										class="form-control" id="subject" name="subject"
-										placeholder="City" type="text" />
+										placeholder="City" type="text" required/>
 								</div>
 								<div class="form-group ">
 									<label class="control-label " for="subject1"> State </label> <input
 										class="form-control" id="subject1" name="subject1"
-										placeholder="State" type="text" />
+										placeholder="State" type="text" required/>
 								</div>
 								<div class="form-group ">
 									<label class="control-label " for="number5"> Postal
 										Code </label> <input class="form-control" id="number5" name="number5"
-										placeholder="Enter your 5 digit postal code" type="number" />
+										placeholder="Enter your 5 digit postal code" type="number" required/>
 								</div>
 								<br> <br>
 								<div class=blue-text>
@@ -338,29 +347,29 @@ button:focus {
 									<div class="form-group ">
 										<label class="control-label " for="name2"> Employer
 											Name </label> <input class="form-control" id="name2" name="name2"
-											placeholder="Enter your current employer name" type="text" />
+											placeholder="Enter your current employer name" type="text" required/>
 									</div>
 									<div class="form-group ">
 										<label class="control-label " for="number"> Annual
 											Salary </label> <input class="form-control" id="number" name="number"
 											placeholder="Enter your annual salary for the current year"
-											type="number" />
+											type="number" required/>
 									</div>
 									<div class="form-group ">
 										<label class="control-label " for="subject">
 											Designation </label> <input class="form-control" id="subject"
 											name="subject" placeholder="Enter your designation"
-											type="text" />
+											type="text" required/>
 									</div>
 									<div class="form-group ">
 										<label class="control-label " for="number5"> Experience
 											Code </label>
 											<span> <input class="form-control" id="number5" name="number5"
 											placeholder="In Years"
-											type="number" />
+											type="number" required/>
 											<input class="form-control" id="number5" name="number5"
 											placeholder="In Months"
-											type="number" />
+											type="number" required/>
 											</span>
 									</div>
 									
@@ -373,7 +382,7 @@ button:focus {
 									<div class="form-group ">
 										<label class="control-label " for="text"> Address Line
 											1 </label> <input class="form-control" id="text" name="text"
-											placeholder="Building Name" type="text" />
+											placeholder="Building Name" type="text" required/>
 									</div>
 									<div class="form-group ">
 										<label class="control-label " for="text2"> Address
@@ -383,18 +392,18 @@ button:focus {
 									<div class="form-group ">
 										<label class="control-label " for="subject"> City </label> <input
 											class="form-control" id="subject" name="subject"
-											placeholder="City" type="text" />
+											placeholder="City" type="text" required/>
 									</div>
 									<div class="form-group ">
 										<label class="control-label " for="subject1"> State </label> <input
 											class="form-control" id="subject1" name="subject1"
-											placeholder="State" type="text" />
+											placeholder="State" type="text" required/>
 									</div>
 									<div class="form-group ">
 										<label class="control-label " for="number5"> Postal
 											Code </label> <input class="form-control" id="number5" name="number5"
 											placeholder="Enter your 5 digit office postal code"
-											type="number" />
+											type="number" required/>
 									</div>
 									
 									<div class="flex justify-center">
@@ -417,6 +426,8 @@ button:focus {
 						</form>
 					</div>
 				</div>
+				<br>
+				<br>
 				<script>
 				</script>
 				

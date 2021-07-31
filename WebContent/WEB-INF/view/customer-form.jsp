@@ -29,7 +29,7 @@
 
 body {
 	background-image:
-		url("https://t4.ftcdn.net/jpg/03/20/85/41/360_F_320854192_D3oAI22yNude4hgcYYPjLzufeFl3RZDU.jpg");
+		url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3tus8kVM_zI88sAPKDqmVJW2Eo9t0DfUDEfbkJH07PO7Z6ViA-k_3YIhnwK6lYVBne_o&usqp=CAU");
 	background-repeat: no-repeat;
 	background-size: 1600px 1500px;
 }
