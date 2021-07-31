@@ -50,7 +50,7 @@ body {
 	width: 200px;
 	border: 3px solid black;
 	display: inline-block;
-	border-radius: 20px;
+	border-radius: 16px;
 	height: 18px;
 }
 
@@ -59,7 +59,7 @@ body {
 	width: 200px;
 	border: 3px solid black;
 	display: inline-block;
-	border-radius: 20px;
+	border-radius: 16px;
 	height: 24px;
 }
 
@@ -75,7 +75,7 @@ body {
 	margin: 5px 15px;
 	width: 250px;
 	border: 3px solid black;
-	border-radius: 25px;
+	border-radius: 16px;
 	height: 18px;
 }
 
