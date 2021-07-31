@@ -11,33 +11,32 @@
 	rel="stylesheet">
 
 <style>
-.button1 {
+#button1 {
 	position: absolute;
-	top: 200px;
-	right: 550px;
 	border: 2px solid gray;
-  color: black;
-  padding: 10px 25px;
-  text-align: center;
-  font-size: 15px;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
+	right: 650px;
+	color: white;
+	padding: 10px 25px;
+	text-align: center;
+	font-size: 15px;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 16px;
 }
-.button2 {
+
+#button2 {
 	position: absolute;
-	top: 200px;
-	right: 340px;
 	border: 2px solid gray;
-  color: black;
-  padding: 10px 25px;
-  text-align: center;
-  font-size: 15px;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
+	right: 400px;
+	color: white;
+	padding: 10px 25px;
+	text-align: center;
+	font-size: 15px;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 16px;
 }
 .right
 {
@@ -76,11 +75,17 @@ Postal Code: ${customer.postalCode}-->
 					accepted or not.<br><br>
 					<div class="flex justify-center">
 							<button
-								class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="/lpswithhibernate/">Home</button>
-							<button
-								class="ml-4 inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="/lpswithhibernate/customer/viewForm">View All Applications</button>
+		class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+		formaction="/lpswithhibernate/" id="button1">
+		<b>Home</b>
+		
+	</button>
+	<span>&nbsp;&nbsp;</span>
+	<button
+		class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+		formaction="/lpswithhibernate/customer/viewForm" id="button2">
+		<b>View All Applications</b>
+	</button>
 						</div>
 					<!-- <button class="button1" value="Submit" formaction="/lpswithhibernate/">Home</button>
    <button class="button2" value="View" formaction="/lpswithhibernate/customer/viewForm">View Applications</button> -->

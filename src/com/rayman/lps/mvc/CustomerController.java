@@ -102,13 +102,23 @@ public class CustomerController {
 		//set customer as a model attribute
 		theModel.addAttribute("customer",theCustomer);
 		//send over to the form
-		return "customer-form";
+		return "updateapplication";
 	}
 	@GetMapping("/showFormForDelete")
 	public String deleteCustomer(@RequestParam("customerID") int theId)
 	{
 		customerService.deleteCustomer(theId);
 		return "redirect:viewForm";
+	}
+	
+	@GetMapping("/showFormForView")
+	public String viewCustomer(@RequestParam("ID") int theId, Model theModel)
+	{//view the customer from our service
+		Customer theCustomer=customerService.viewCustomer(theId);
+		//set customer as a model attribute
+		theModel.addAttribute("customer",theCustomer);
+		//send over to the form
+		return "ReadOnlyApplication";
 	}
 	
 	@GetMapping("/search")

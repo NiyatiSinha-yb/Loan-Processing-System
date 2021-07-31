@@ -27,6 +27,13 @@ public class CustomerServiceImp implements CustomerService {
 		return customerDAO.getCustomer(theId);
 		
 	}
+	
+	@Override
+	@Transactional
+	public Customer viewCustomer(int theId) {
+		return customerDAO.viewCustomer(theId);
+		
+	}
 
 
 	@Override

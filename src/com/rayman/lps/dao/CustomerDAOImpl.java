@@ -48,7 +48,15 @@ public class CustomerDAOImpl implements CustomerDAO {
 		Customer theCustomer=currentSession.get(Customer.class, theId);
 		return theCustomer;
 	}
-
+  
+	@Override
+	public Customer viewCustomer(int theId) {
+		//get current hibernate session
+		Session currentSession= sessionFactory.getCurrentSession();
+		//retrieve from database using primary key
+		Customer theCustomer=currentSession.get(Customer.class, theId);
+		return theCustomer;
+	}
 
 	@Override
 	public void saveCustomer(Customer theCustomer) {
@@ -115,9 +123,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 					case SortUtils.EMAIL:
 						theFieldName = "emailAddress";
 						break;
+					case SortUtils.SUBMITTED_DATE:
+						theFieldName="submitted_Date";
+						break;
 					default:
 						// if nothing matches the default to sort by lastName
-						theFieldName = "firstName";
+						theFieldName = "submitted_Date";
 				}
 				
 				// create a query  

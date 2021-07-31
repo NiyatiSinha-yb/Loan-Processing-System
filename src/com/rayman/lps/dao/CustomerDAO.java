@@ -19,6 +19,8 @@ public interface CustomerDAO {
 	public List<Customer> getSortedCustomers(int theSortField);
 
 	public List<Customer> getCustomers();
+	
+	public Customer viewCustomer(int theId);
 
 }
 
