@@ -35,7 +35,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springf
     <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/testdb"/>
     
     <property name="user" value="root"/>
-    <property name="password" value="Ray$1742"/>
+    <property name="password" value="root"/>
     <property name="minPoolSize" value="5"/>
      <property name="maxPoolSize" value="20"/>
       <property name="maxIdleTime" value="30000"/>
