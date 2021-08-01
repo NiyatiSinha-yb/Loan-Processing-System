@@ -193,7 +193,7 @@ color: red;
 
 	<button
 		class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-		formaction="/lpswithhibernate/showForm" id="button1">
+		formaction="/lpswithhibernate/customer/showForm" id="button1">
 		<b>Add a customer</b>
 		
 	</button>
@@ -206,7 +206,7 @@ color: red;
 	<span>&nbsp;&nbsp;</span>
 	<button
 		class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-		formaction="/lpswithhibernate" id="button3">
+		formaction="/lpswithhibernate/user/homePage" id="button3">
 		<b>Home</b>
 	</button>
 	</form:form>

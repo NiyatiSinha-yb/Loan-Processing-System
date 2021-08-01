@@ -63,12 +63,7 @@ public class CustomerController {
 	}
 	
 	
-	@RequestMapping("/homePage")
-	public String homePage(Model theModel)
-	{
-		
-		return "main-menu";
-	}
+	
 	
 	@RequestMapping("/contactUs")
 	public String contactUs(Model theModel)
@@ -132,10 +127,11 @@ public class CustomerController {
         return "viewApplication";        
     }
 	@RequestMapping("/processForm")
-	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer, BindingResult theBindingResult)
+	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer,BindingResult theBindingResult)
 	{
 		if(theBindingResult.hasErrors())
 		{
+			
 			return "customer-form";
 		}
 		else
@@ -166,4 +162,6 @@ public class CustomerController {
 		
 		return "viewApplication";
 	}
+	
+	
 }
