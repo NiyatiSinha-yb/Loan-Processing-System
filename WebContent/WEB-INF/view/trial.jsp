@@ -485,6 +485,22 @@ button:focus {
 						seterror("fnameID", "Not a valid name");
 						formValidated= false;
 					} 
+					if(fname.length>255){
+						//id //msg
+						seterror("fnameID", "Length should be less than 255");
+						formValidated= false;
+					} 
+					
+					/* 	-----------------------------------------Middle Name---------------------------------- */		
+					//form name //fname is name
+					 var mname=document.forms['sForm']["middleName"].value;
+					
+					if(mname.length>255){
+						//id //msg
+						seterror("mnameID", "Length should be less than 255");
+						formValidated= false;
+					} 
+					
 					
 					/* 	-----------------------------------------Last Name---------------------------------- */		
 					
@@ -494,7 +510,14 @@ button:focus {
 						//id //msg
 						seterror("lnameID", "Not a valid name");
 						formValidated= false;
-					}  
+					} 
+					if(lname.length>255){
+						//id //msg
+						seterror("lnameID", "Length should be less than 255");
+						formValidated= false;
+					} 
+					
+					
 					
 					/* 	------------------------------------------LoanAmt--------------------------------- */		
 					
