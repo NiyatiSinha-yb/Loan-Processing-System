@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -132,8 +133,8 @@ button:focus {
 			<h5 class="text-center mb-4">
 				<b><i>Loan Applicant Entry Form</i></b>
 			</h5>
-			<form class="form-card" method="post" action="processForm" name="sForm" modelAttribute="customer" onsubmit="return validateForm()">
-				
+		<%-- 	<form class="form-card" method="post" action="processForm" name="sForm" modelAttribute="customer" onsubmit="return validateForm()"> --%>
+				<form:form class="form-card" method="post" action="processForm" name="sForm" modelAttribute="customer" onsubmit="return validateForm()">
 				<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
 				<div class="bootstrap-iso">
 					<div class="container-fluid">
@@ -148,21 +149,21 @@ button:focus {
 							</div>
 							<div class="form-group" id="fnameID">
 								<label class="control-label " for="name"> First Name </label> <input
-									class="form-control" name="fname"
+									class="form-control" name="firstName" path="firstName"
 									placeholder="Enter your first name" type="text" required/><span class="formerror"> </span>
 									
 							</div>
 						
 							<div class="form-group" id="mnameID">
 								<label class="control-label " for="name"> Middle Name </label> <input
-									class="form-control" name="mname"
+									class="form-control" name="middleName" path="middleName"
 									placeholder="Enter your first name" type="text" /><span class="formerror"> </span>
 									
 							</div>
 								 
 							<div class="form-group" id="lnameID">
 								<label class="control-label " for="name"> Last Name </label> <input
-									class="form-control" name="lname"
+									class="form-control" name="lastName" path="lastName"
 									placeholder="Enter your first name" type="text" required/><span class="formerror"> </span>
 									
 							</div>
@@ -173,7 +174,7 @@ button:focus {
 										<div class="input-group-addon">
 											<i class="fa fa-calendar"> </i>
 										</div>
-										<input class="form-control" id="date" name="date"
+										<input class="form-control" name="dateOfBirth" path="dateOfBirth" type="date"
 											placeholder="DD-MM-YYYY" required/>
 									</div>
 								</div>
@@ -228,9 +229,9 @@ button:focus {
 							</div>
 							
 								<div class="form-group">
-									<label class="control-label" for="select" > Maritial
-										Status </label> <select class="select form-control" id="mStatus"
-										name="select"  style="font-size:18px; color:gray">
+									<label class="control-label" for="select" > Marital
+										Status </label> <select class="select form-control" path="maritalStatus"
+										name="maritalStatus"  style="font-size:18px; color:gray">
 										<option value="" disabled selected hidden>Open this select menu</option>
 										<option value="Single">Single</option>
 										<option value="Married">Married</option>
@@ -245,7 +246,7 @@ button:focus {
 							
 								<div class="form-group " id="ssnNumber">
 									<label class="control-label " for="number"> SSN Number
-									</label> <input class="form-control"  name="number" 
+									</label> <input class="form-control"  name="ssnNumber" path="ssnNumber"
 										placeholder="SSN Number" type="number" required />
 										
 								</div>
@@ -258,12 +259,12 @@ button:focus {
 								</div>
 									<div class="form-group" id="LoanAmtID">
 									<label class="control-label" for="number1"> Loan
-										Amount </label> <input class="form-control" name="LoanAmt" placeholder="Loan Amount in $" type="number" required/><span class="formerror"> </span>
+										Amount </label> <input class="form-control" name="loanAmount" path="loanAmount" placeholder="Loan Amount in $" type="number" required/><span class="formerror"> </span>
 								</div>
 							<div class="form-group ">
 									<label class="control-label " for="select"> Loan
-										purpose </label> <select class="select form-control" id="LoanP"
-										name="select" style="font-size:18px; color:gray" required >
+										purpose </label> <select class="select form-control" path="loanPurpose"
+										name="loanPurpose" style="font-size:18px; color:gray" required >
 										<option value="" disabled selected hidden>Open this select menu</option>
 										<option value="Debt">Debt</option>
 										<option value="Home Loan">Home Loan</option>
@@ -276,7 +277,7 @@ button:focus {
 								<div class="form-group " id="DescriptionID">
 									<label class="control-label " for="message">
 										Description </label>
-									<textarea class="form-control" cols="40" id="desc"
+									<textarea class="form-control" cols="40" id="desc" path="description"
 										name="Description" placeholder="Loan Application Reason" rows="10"></textarea><span class="formerror"> </span>
 								</div>
 
@@ -289,27 +290,27 @@ button:focus {
 
 								<div class="form-group " id="homePhoneID">
 									<label class="control-label " for="number2"> Home Phone
-									</label> <input class="form-control" id="hPhone" name="homePhone"
+									</label> <input class="form-control" id="hPhone" name="homePhone" path="homePhone"
 										placeholder="Enter your 10 digit residential contact number"
 										type="number" required/><span class="formerror"> </span>
 								</div>
 								<div class="form-group "  id="OfficePhoneID">
 									<label class="control-label " for="number3"> Office
-										Phone </label> <input class="form-control" name="OfficePhone"
+										Phone </label> <input class="form-control" name="OfficePhone" path="officePhone"
 										placeholder="Enter your 10 digit office contact number"
 										type="number" required/><span class="formerror"> </span>
 								</div>
 								<div class="form-group " id="MobileID" >
 									<label class="control-label " for="number4"> Mobile </label> <input
-										class="form-control" name="Mobile"
-										placeholder="Enter your 10 digit personal contact number"
+										class="form-control" name="Mobile" path="mobile"
+										placeholder="Enter your 10 digit personal contact number" 
 										type="number" required/><span class="formerror"> </span>
 										
 								</div>
 								<div class="form-group" id="EmailAddressID">
 									<label class="control-label requiredField" for="email">
 										Email Address <span class="asteriskField"> * </span>
-									</label> <input class="form-control"  name="EmailAddress"
+									</label> <input class="form-control"  name="EmailAddress" path="emailAddress"
 										placeholder="username@domain" type="email" required/><span class="formerror"> </span>
 								</div>
 								
@@ -322,28 +323,28 @@ button:focus {
 								
 								<div class="form-group " id="Address1ID">
 									<label class="control-label " for="text"> Address Line
-										1 </label> <input class="form-control" name="Address1"
+										1 </label> <input class="form-control" name="Address1" path="address1"
 										placeholder="House Number" type="text" required/><span class="formerror"> </span>
 								</div>
 								<div class="form-group " id="Address2ID">
 									<label class="control-label " for="text2"> Address Line
-										2 </label> <input class="form-control" id="text2" name="text2"
+										2 </label> <input class="form-control" name="Address2" path="address2"
 										placeholder="Street, Colony" type="text" /><span class="formerror"> </span>
 								</div>
 							
 								<div class="form-group " id="CityID">
 									<label class="control-label " for="subject"> City </label> <input
-										class="form-control" name="City"
+										class="form-control" name="City" path="city"
 										placeholder="City" type="text" required/><span class="formerror"> </span>
 								</div>
 								<div class="form-group " id="StateID">
 									<label class="control-label " for="subject1"> State </label> <input
-										class="form-control" name="State"
+										class="form-control" name="State" path="state"
 										placeholder="State" type="text" required/><span class="formerror"> </span>
 								</div>
 								<div class="form-group" id="PostalCodeID">
 									<label class="control-label " for="number5"> Postal
-										Code </label> <input class="form-control" name="PostalCode"
+										Code </label> <input class="form-control" name="PostalCode" path="postalCode"
 										placeholder="Enter your 5 digit postal code" type="number" required/><span class="formerror"> </span>
 								</div>
 			
@@ -358,19 +359,19 @@ button:focus {
 								
 									<div class="form-group " id="EmployerNameID">
 										<label class="control-label " for="name2"> Employer
-											Name </label> <input class="form-control"  name="EmployerName"
+											Name </label> <input class="form-control"  name="EmployerName" path="employerName"
 											placeholder="Enter your current employer name" type="text" required/><span class="formerror"> </span>
 									</div>
 									<div class="form-group" id="AnnualSalaryID">
 										<label class="control-label " for="number"> Annual
-											Salary </label> <input class="form-control" name="AnnualSalary"
+											Salary </label> <input class="form-control" name="AnnualSalary" path="annualSalary"
 											placeholder="Enter your annual salary for the current year"
 											type="number" required/><span class="formerror"> </span>
 									</div>
 									<div class="form-group " id="DesignationID">
 										<label class="control-label " for="subject">
 											Designation </label> <input class="form-control"
-											name="Designation" placeholder="Enter your designation"
+											name="Designation" path="designation" placeholder="Enter your designation"
 											type="text" required/><span class="formerror"> </span>
 									</div>
 								<!-- 	<div class="form-group ">
@@ -385,7 +386,17 @@ button:focus {
 											</span>
 									</div>
 								 -->	
-
+								<div class="emp-right">
+							<span><b>Experience</b></span><span>&nbsp;&nbsp; <form:input
+									type="number" style="width: 80px;" path="experienceYear"
+									name="experienceYear" placeholder="Year" /> <form:errors
+									path="experienceYear" cssClass="error">
+								</form:errors> <form:input type="number" style="width: 80px;"
+									name="experienceMonth" path="experienceMonth"
+									placeholder="Month" /> <form:errors path="experienceMonth"
+									cssClass="error">
+							</form:errors>
+								</div>
 									<div class=blue-text>
 										<h5>
 											<i> Office Address </i>
@@ -393,56 +404,53 @@ button:focus {
 									</div>
 									<div class="form-group " id="EmpAddress1ID">
 									<label class="control-label " for="text"> Address Line
-										1 </label> <input class="form-control" name="EmpAddress1"
+										1 </label> <input class="form-control" name="EmpAddress1" path="empAddress1"
 										placeholder="House Number" type="text" required/><span class="formerror"> </span>
 								</div>
 								<div class="form-group " id="EmpAddress2ID">
 									<label class="control-label " for="text2"> Address Line
-										2 </label> <input class="form-control" name="EmpAddress2"
+										2 </label> <input class="form-control" name="EmpAddress2" path="empAddress2"
 										placeholder="Street, Colony" type="text" /><span class="formerror"> </span>
 								</div>
 							
 								<div class="form-group " id="EmpCityID">
 									<label class="control-label " for="subject"> City </label> <input
-										class="form-control" name="EmpCity"
+										class="form-control" name="EmpCity" path="empCity"
 										placeholder="City" type="text" required/><span class="formerror"> </span>
 								</div>
 								<div class="form-group " id="empStateID">
 									<label class="control-label " for="subject1"> State </label> <input
-										class="form-control" name="empState"
+										class="form-control" name="empState" path="empState"
 										placeholder="State" type="text" required/><span class="formerror"> </span>
 								</div>
 								<div class="form-group" id="empPostalID">
 									<label class="control-label " for="number5"> Postal
-										Code </label> <input class="form-control" name="empPostal"
+										Code </label> <input class="form-control" name="empPostal"  path="empPostal"
 										placeholder="Enter your 5 digit postal code" type="number" required/><span class="formerror"> </span>
 								</div>
 									
 									<div class="flex justify-center">
-						<!-- 	<button
+							<button
 								class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="/"><p style ="color:white; padding-top: 5px;">Submit</p></button>
+								formaction="processForm"><p style ="color:white; padding-top: 5px;">Submit</p></button>
 								<span>&nbsp;</span>
 							<button
 								class="ml-4 inline-flex text-red bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="customer/viewForm"><p style ="color:white; padding-top: 5px;">Refresh Form</p></button>
+								formaction="viewForm"><p style ="color:white; padding-top: 5px;">Refresh Form</p></button>
 							<span>&nbsp;</span>
 							<button
 								class="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
 								formaction="/"><p style ="color:white; padding-top: 5px;">Home</p></button>
 						
-						</div>  -->
+						</div> 
 
-							<button
-								class="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="/"><p style ="color:white; padding-top: 5px;">Submit</p></button>
-						
+							
 						</div>
 						
 					</div>
 					</div> 
 						</div>
-						</form>
+						</form:form>
 					</div>
 				</div>
 				<br>
@@ -471,7 +479,7 @@ button:focus {
 					clearErrors();
 					/* 	-----------------------------------------First Name---------------------------------- */		
 					//form name //fname is name
-					 var fname=document.forms['sForm']["fname"].value;
+					 var fname=document.forms['sForm']["firstName"].value;
 					if(fname.length<2){
 						//id //msg
 						seterror("fnameID", "Not a valid name");
@@ -481,7 +489,7 @@ button:focus {
 					/* 	-----------------------------------------Last Name---------------------------------- */		
 					
 					//form name //fname is name
-					var lname=document.forms['sForm']["lname"].value;
+					var lname=document.forms['sForm']["lastName"].value;
 					if(lname.length<2){
 						//id //msg
 						seterror("lnameID", "Not a valid name");
@@ -491,7 +499,7 @@ button:focus {
 					/* 	------------------------------------------LoanAmt--------------------------------- */		
 					
 					//form name //fname is name
-					var LoanAmt=document.forms['sForm']["LoanAmt"].value;
+					var LoanAmt=document.forms['sForm']["loanAmount"].value;
 					 if(LoanAmt<10){
 						//id //msg
 						seterror("LoanAmtID", "Minimum Loan that can be taken is $10");
