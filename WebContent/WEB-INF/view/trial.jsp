@@ -491,6 +491,19 @@ button:focus {
 						formValidated= false;
 					} 
 					
+<<<<<<< HEAD
+=======
+					/* 	-----------------------------------------Middle Name---------------------------------- */		
+					//form name //fname is name
+					 var mname=document.forms['sForm']["middleName"].value;
+					
+					if(mname.length>255){
+						//id //msg
+						seterror("mnameID", "Length should be less than 255");
+						formValidated= false;
+					} 
+					
+>>>>>>> de8e042429074ee1182ee729c8af57c13a54552d
 					
 					/* 	-----------------------------------------Last Name---------------------------------- */		
 					
