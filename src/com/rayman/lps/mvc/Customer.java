@@ -43,21 +43,21 @@ private Integer ID;
 	}
 	
 	@Column(name="FirstName")
-	@NotNull(message="Must be required")
-	@Size(min=0,max=255,message="Length should be less than 255")
+	//@NotNull(message="Must be required")
+	//@Size(min=0,max=255,message="Length should be less than 255")
 	 private String firstName;
 	 
 	@Column(name="LastName")
-	 @NotNull(message="Must be required")
-	 @Size(min=1,max=255,message="is required")
+	// @NotNull(message="Must be required")
+	// @Size(min=1,max=255,message="is required")
 	 private String lastName;
 	 
 	@Column(name="MiddleName")
-	 @Size(min=0,max=255,message="Length should be less than 255 characters")
+	// @Size(min=0,max=255,message="Length should be less than 255 characters")
 	 private String middleName;
 	 
 	@Column(name="DOB")
-	 @NotNull(message="Must be required")
+	// @NotNull(message="Must be required")
 	
 	 private String dateOfBirth;
 	 
@@ -65,12 +65,12 @@ private Integer ID;
 	 private String maritalStatus;
 	 
 	 @Column(name="ssN")
-	 @NotNull(message="Must be required")
+	// @NotNull(message="Must be required")
 	 private Integer ssnNumber;
 	 
 	 @Column(name="LoanAmount")
-	 @NotNull(message="Must be required")
-	 @Min(value=0,message="Must be numeric")
+	// @NotNull(message="Must be required")
+	// @Min(value=0,message="Must be numeric")
 	 private Integer loanAmount;
 	 
 	 @Column(name="LoanPurpose")
@@ -80,90 +80,90 @@ private Integer ID;
 	 private String description;
 	 
 	 @Column(name="Address1")
-	 @NotNull(message="Must be required")
-	 @Size(min=0,max=255,message="Length should be less than 255 characters")
+	// @NotNull(message="Must be required")
+//	 @Size(min=0,max=255,message="Length should be less than 255 characters")
 	 private String address1;
 	 
 	 @Column(name="Address2")
-	 @Size(min=0,max=255,message="Length should be less than 255 characters")
+//	 @Size(min=0,max=255,message="Length should be less than 255 characters")
 	 private String address2;
 	 
 	 @Column(name="City")
-	 @NotNull(message="Must be required")
-	 @Size(min=0,max=255,message="Length should be less than 255 characters")
+	// @NotNull(message="Must be required")
+//	 @Size(min=0,max=255,message="Length should be less than 255 characters")
 	 private String city;
 	 
 	 @Column(name="State")
-	 @NotNull(message="Must be required")
-	 @Size(min=0,max=255,message="Length should be less than 255 characters")
+	// @NotNull(message="Must be required")
+	// @Size(min=0,max=255,message="Length should be less than 255 characters")
 	 private String state;
 	 
 	 @Column(name="HomePhone")
-	 @NotNull(message="Must be required")
-	 @Pattern(regexp="(^$|[0-9]{10})",message="Must be exactly 10 digits")
+	// @NotNull(message="Must be required")
+	// @Pattern(regexp="(^$|[0-9]{10})",message="Must be exactly 10 digits")
 	 private String homePhone;
 	 
 	 @Column(name="OfficePhone")
-	 @Pattern(regexp="(^$|[0-9]{10})",message="Must be exactly 10 digits")
+	// @Pattern(regexp="(^$|[0-9]{10})",message="Must be exactly 10 digits")
 	 private String officePhone;
 	  
 	 @Column(name="Mobile")
-	 @NotNull(message="Must be required")
-	 @Pattern(regexp="(^$|[0-9]{10})",message="Must be exactly 10 digits")
+	// @NotNull(message="Must be required")
+	// @Pattern(regexp="(^$|[0-9]{10})",message="Must be exactly 10 digits")
 	 private String mobile;
 	 
 	 @Column(name="EmailAddress")
-	 @NotNull(message="Must be required")
-	 @Pattern(regexp="^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$",message="Invalid Email address")
+	// @NotNull(message="Must be required")
+//	 @Pattern(regexp="^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$",message="Invalid Email address")
 	 //must be a valid email address annotation required
 	 private String emailAddress;
 	 
 	 @Column(name="EmployerName")
-	 @NotNull(message="Must be required")
-	 @Size(min=0,max=255,message="Length should be less than 255 characters")
+	// @NotNull(message="Must be required")
+	// @Size(min=0,max=255,message="Length should be less than 255 characters")
 	 private String employerName;
 	 
 	 @Column(name="AnnualSalary")
-	 @NotNull(message="Must be required")
-	 @Min(value=10000,message="Must be above 10,000$")
+	// @NotNull(message="Must be required")
+	// @Min(value=10000,message="Must be above 10,000$")
 	 private Integer annualSalary;
 	 
 	 @Column(name="EmpAddress1")
-	 @NotNull(message="Must be required")
-	 @Size(min=0,max=255,message="Length should be less than 255 characters")
+	// @NotNull(message="Must be required")
+	// @Size(min=0,max=255,message="Length should be less than 255 characters")
 	 private String empAddress1;
 	 
 	 @Column(name="EmpAddress2")
-	 @Size(min=0,max=255,message="Length should be less than 255 characters")
+	// @Size(min=0,max=255,message="Length should be less than 255 characters")
 	 private String empAddress2;
 	 
 	 @Column(name="EmpCity")
-	 @NotNull(message="Must be required")
-	 @Size(min=0,max=255,message="Length should be less than 255 characters")
+	// @NotNull(message="Must be required")
+	// @Size(min=0,max=255,message="Length should be less than 255 characters")
 	 private String empCity;
 	 
 	 @Column(name="empState")
-	 @NotNull(message="Must be required")
-	 @Size(min=0,max=255,message="Length should be less than 255 characters")
+	// @NotNull(message="Must be required")
+	// @Size(min=0,max=255,message="Length should be less than 255 characters")
 	 private String empState;
 	 
 	 @Column(name="EmpPostal")
-	 @NotNull(message="Must be required")
-	 @Pattern(regexp="(^$|[0-9]{5})",message="Must be exactly 5 digit")
+	// @NotNull(message="Must be required")
+	// @Pattern(regexp="(^$|[0-9]{5})",message="Must be exactly 5 digit")
 	 private String empPostal;
 	
 	 @Column(name="ExperienceYear")
-	 @NotNull(message="Must be required")
+	/* @NotNull(message="Must be required") */
 	 private Integer experienceYear;
 	 
 	 @Column(name="PostalCode")
-	 @NotNull(message="Must be required")
-	 @Pattern(regexp="(^$|[0-9]{5})",message="Must be exactly 5 digit")
+	// @NotNull(message="Must be required")
+	// @Pattern(regexp="(^$|[0-9]{5})",message="Must be exactly 5 digit")
 	// @Pattern(regexp="^[a-zA-Z0-9]{5}",message="only 5 chars/digits")
 	 private String postalCode;
      
 	 @Column(name="ExperienceMonth")
-	 @NotNull(message="required")
+	/* @NotNull(message="required") */
 	 private Integer experienceMonth;
 	 
 	 @Column(name="Designation")
