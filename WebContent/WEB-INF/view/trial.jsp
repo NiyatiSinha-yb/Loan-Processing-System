@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+ <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -491,6 +491,8 @@ button:focus {
 						formValidated= false;
 					} 
 					
+<<<<<<< HEAD
+=======
 					/* 	-----------------------------------------Middle Name---------------------------------- */		
 					//form name //fname is name
 					 var mname=document.forms['sForm']["middleName"].value;
@@ -501,6 +503,7 @@ button:focus {
 						formValidated= false;
 					} 
 					
+>>>>>>> de8e042429074ee1182ee729c8af57c13a54552d
 					
 					/* 	-----------------------------------------Last Name---------------------------------- */		
 					

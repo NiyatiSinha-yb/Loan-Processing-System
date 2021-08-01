@@ -60,6 +60,7 @@ public class CustomerController {
 		theModel.addAttribute("customer", theCustomers);
 		return "viewApplication";
 	}
+<<<<<<< HEAD
 
 	@RequestMapping("/homePage")
 	public String homePage(Model theModel) {
@@ -67,6 +68,12 @@ public class CustomerController {
 		return "main-menu";
 	}
 
+=======
+	
+	
+	
+	
+>>>>>>> 1fb36d06ec8a91aba542663541f06c5d5b191d69
 	@RequestMapping("/contactUs")
 	public String contactUs(Model theModel) {
 		return "ContactUs";
@@ -124,6 +131,7 @@ public class CustomerController {
 	}
 
 	@RequestMapping("/processForm")
+<<<<<<< HEAD
 	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer, BindingResult theBindingResult) {
 		
 		  if(theBindingResult.hasErrors()) { return "trial"; } else
@@ -132,6 +140,20 @@ public class CustomerController {
 		  customerService.saveCustomer(theCustomer);
 		return "customer-confirmation";
 		 }
+=======
+	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer,BindingResult theBindingResult)
+	{
+		if(theBindingResult.hasErrors())
+		{
+			
+			return "customer-form";
+		}
+		else
+		{
+			customerService.saveCustomer(theCustomer);
+			return "customer-confirmation";
+		}
+>>>>>>> 1fb36d06ec8a91aba542663541f06c5d5b191d69
 	}
 
 	@GetMapping("/list")
@@ -154,4 +176,6 @@ public class CustomerController {
 
 		return "viewApplication";
 	}
+	
+	
 }

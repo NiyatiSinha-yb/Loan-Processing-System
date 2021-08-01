@@ -20,7 +20,7 @@
     </a>
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
     <button class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="/lpswithhibernate/">Home</button>
+								formaction="/lpswithhibernate/user/homePage">Home</button>
     <span>&nbsp;&nbsp;</span>
      <button class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
 								formaction="/lpswithhibernate/customer/contactUs">Contact Us</button>

@@ -27,6 +27,9 @@
 	font-weight: 600;
 }
 
+.details{
+margin-left: 650px;
+}
 .left {
 	width: 40%;
 	padding: 5px;
@@ -39,7 +42,7 @@ body {
 	background-image:
 		url("https://t4.ftcdn.net/jpg/03/20/85/41/360_F_320854192_D3oAI22yNude4hgcYYPjLzufeFl3RZDU.jpg");
 	background-repeat: no-repeat;
-	background-size: 1600px 1500px;
+	background-size: 1600px 1620px;
 }
 
 .right {
@@ -58,7 +61,7 @@ body {
 	width: 200px;
 	border: 3px solid black;
 	display: inline-block;
-	border-radius: 20px;
+	border-radius: 16px;
 	height: 18px;
 }
 
@@ -67,7 +70,7 @@ body {
 	width: 200px;
 	border: 3px solid black;
 	display: inline-block;
-	border-radius: 20px;
+	border-radius: 16px;
 	height: 24px;
 }
 
@@ -76,14 +79,14 @@ body {
 	width: 65vw;
 	height: 120px;
 	border: 3px solid black;
-	border-radius: 25px;
+	border-radius: 23px;
 }
 
 .right  input {
 	margin: 5px 15px;
 	width: 250px;
 	border: 3px solid black;
-	border-radius: 25px;
+	border-radius: 20px;
 	height: 18px;
 }
 
@@ -126,7 +129,7 @@ body {
 
 .button1 {
 	position: absolute;
-	top: 1440px;
+	top: 1570px;
 	right: 200px;
 	border: 3px solid black;
 	color: black;
@@ -141,7 +144,7 @@ body {
 
 .button2 {
 	position: absolute;
-	top: 1440px;
+	top: 1570px;
 	right: 90px;
 	border: 3px solid black;
 	color: black;
@@ -181,6 +184,13 @@ body {
 			<tr>${tempCustomer.ID}</tr>
 			</table>
 		</c:forEach> --%>
+		<hr>
+		<div class="details">
+		<h4>Applicant ID:-${customer.ID}</h4>
+		<h4>FirstName:-${customer.firstName}</h4>
+		<h4>Loan Amount:-${customer.loanAmount}</h4>
+		</div>
+		<hr>
 			<h2 class="h2">Here is Your Application!</h2>
 			<br>
 			<div class="row">
