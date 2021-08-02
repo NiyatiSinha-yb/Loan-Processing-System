@@ -1,6 +1,6 @@
-<!--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+ <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>-->
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,8 @@
 <!--Font Awesome (added because you use icons in your prepend/append)-->
 <link rel="stylesheet"
 	href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
-
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+	rel="stylesheet">
 </head>
 <style>
 .border-md {
@@ -82,6 +83,7 @@ select.form-control {
 </style>
 <body>
 <!-- Navbar-->
+
 <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light py-3">
         <div class="container">
@@ -97,6 +99,8 @@ select.form-control {
  
    
 <div class="container">
+
+<form:form method="post" action="/lpswithhibernate/user/registersearch" modelAttribute="user">
     <div class="row py-5 mt-4 align-items-center">
         <!-- For Demo Purpose -->
         <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
@@ -105,18 +109,22 @@ select.form-control {
             <p class="font-italic text-muted mb-0">Create an account and apply for loan at zero cost!</p>
             
         </div>
+        
          <i class="fa-user-md text-muted"></i>
-
+         <span style="color: red;">The username already exists!</span>
+         
+         <br><br>
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-6 ml-auto">
-            <form action="#">
+            
                 <div class="row">
+                
                     <div class="form-group">
 							<div class="input-group-prepend">
 								
 								<i class="fa fa-user text-muted"></i> <label for="uname">First
-									Name:</label> <input type="text" class="form-control" id="uname"
-									placeholder="First Name" name="firstName" required> </span>
+									Name:</label> <input type="text" class="form-control"
+									placeholder="First Name" name="firstName" path="firstName" required="true"/> </span>
 							</div>
 
 						</div>
@@ -126,8 +134,8 @@ select.form-control {
 								
 								<i class="fa fa-user text-muted"></i>
 							<label for="uname">Last Name:</label> <input type="text"
-								class="form-control" id="uname" placeholder="last Name"
-								name="lastName" required>
+								class="form-control" placeholder="last Name"
+								name="lastName" path="lastName" required="true"/>
 						</div>
 						</div>
 
@@ -136,43 +144,47 @@ select.form-control {
 								
 								<i class="fa fa-user text-muted"></i>
 							<label for="uname">User Name:</label> <input type="text"
-								class="form-control" id="username" placeholder="User Name"
-								name="username" required>
+								class="form-control"  placeholder="User Name"
+								name="userName" path="userName" required="true"/>
 						</div>
 						</div>
 						<div class="form-group">
 							<div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            
                                 <i class="fa fa-lock text-muted"></i>
                             
 							<label for="uname">Password:</label> <input type="password"
-								class="form-control" id="password" placeholder="Password"
-								name="password" required>
-							</span>
+								class="form-control"  placeholder="Password"
+								name="password" path="password" required="true"/>
+							
 						</div>
-
+                       </div>
                    
-
+<br>
                     <!-- Submit Button -->
-                    <div class="form-group col-lg-12 mx-auto mb-0">
-                        <a href="#" class="btn btn-primary btn-block py-2">
-                            <span class="font-weight-bold">Create your account</span>
-                        </a>
-                    </div>
-
-
                    
+                        
+                            <div class="flex justify-center">
+							<button
+								class="inline-flex text-white bg-blue-500 border-0 py-4 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg-120"
+							>Submit</button>
+                    
+                              </div>
+
+                   <br>
                     <!-- Already Registered -->
                     <div class="text-center w-100">
-                        <p class="text-muted font-weight-bold">Already Registered? <a href="#" class="text-primary ml-2">Login</a></p>
+                        <p class="text-muted font-weight-bold">Already Registered? <a href="/lpswithhibernate/user/login" class="text-primary ml-2">Login</a></p>
                     </div>
 
                 </div>
-            </form>
+            
         </div>
     </div>
+   </div> 
+   </form:form>
 </div>
-</div>
+
 
 <script>
 //For Demo Purpose [Changing input group text on focus]
@@ -187,4 +199,5 @@ $(function () {
 
 </script>
 </body>
-</html>
+</html> 
+

@@ -83,7 +83,7 @@ select.form-control {
 </style>
 <body>
 <!-- Navbar-->
-<
+
 <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light py-3">
         <div class="container">
@@ -99,7 +99,7 @@ select.form-control {
  
    
 <div class="container">
-<form:form method="post" modelAttribute="user">
+<form:form method="post" action="/lpswithhibernate/user/registersearch" modelAttribute="user">
     <div class="row py-5 mt-4 align-items-center">
         <!-- For Demo Purpose -->
         <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
@@ -118,7 +118,7 @@ select.form-control {
 							<div class="input-group-prepend">
 								
 								<i class="fa fa-user text-muted"></i> <label for="uname">First
-									Name:</label> <input type="text" class="form-control" id="uname"
+									Name:</label> <input type="text" class="form-control"
 									placeholder="First Name" name="firstName" path="firstName" required="true"/> </span>
 							</div>
 
@@ -129,7 +129,7 @@ select.form-control {
 								
 								<i class="fa fa-user text-muted"></i>
 							<label for="uname">Last Name:</label> <input type="text"
-								class="form-control" id="uname" placeholder="last Name"
+								class="form-control" placeholder="last Name"
 								name="lastName" path="lastName" required="true"/>
 						</div>
 						</div>
@@ -139,37 +139,37 @@ select.form-control {
 								
 								<i class="fa fa-user text-muted"></i>
 							<label for="uname">User Name:</label> <input type="text"
-								class="form-control" id="username" placeholder="User Name"
+								class="form-control"  placeholder="User Name"
 								name="userName" path="userName" required="true"/>
 						</div>
 						</div>
 						<div class="form-group">
 							<div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            
                                 <i class="fa fa-lock text-muted"></i>
                             
 							<label for="uname">Password:</label> <input type="password"
-								class="form-control" id="password" placeholder="Password"
+								class="form-control"  placeholder="Password"
 								name="password" path="password" required="true"/>
-							</span>
+							
 						</div>
+						</div>
+						<br>
+             
 
-                   
-<br>
                     <!-- Submit Button -->
                    
                         
                             <div class="flex justify-center">
 							<button
-								class="inline-flex text-white bg-blue-500 border-0 py-4 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="/lpswithhibernate/user/homePage">Submit</button>
+								class="inline-flex text-white bg-blue-500 border-0 py-4 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg-100"
+							>Submit</button>
                     
                               </div>
-
-                   
+                      <br>
                     <!-- Already Registered -->
                     <div class="text-center w-100">
-                        <p class="text-muted font-weight-bold">Already Registered? <a href="#" class="text-primary ml-2">Login</a></p>
+                        <p class="text-muted font-weight-bold">Already Registered? <a href="/lpswithhibernate/user/login" class="text-primary ml-2">Login</a></p>
                     </div>
 
                 </div>
