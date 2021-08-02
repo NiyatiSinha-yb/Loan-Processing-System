@@ -8,10 +8,6 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String showPage() {
-<<<<<<< HEAD
-		return "main-menu";
-=======
 		return "newlogin";
->>>>>>> 1fb36d06ec8a91aba542663541f06c5d5b191d69
 	}
 }
