@@ -89,6 +89,15 @@ box-shadow: 0 0 0 0 !important;
 color: white;
 }
 
+.error{
+margin-left: 400px;
+top: 300px;
+
+}
+
+.colour{
+color: red;
+}
 .remember input
 {
 width: 20px;
@@ -116,13 +125,26 @@ color: white;
 color: yellow;
 margin-left: 4px;
 }
+.msg{
 
+align: center;
+}
 </style>
 <body>
 <div class="container">
+
+	<!-- <span>Check your credentials</span>
+	<p class="colour" style="font-size: 14px;">Click on register if you are a new user!</p> -->
+	
 <form:form method="post" modelAttribute="user" action="/lpswithhibernate/user/search">
+<div class="msg">
+<span>Check your credentials</span>
+	<p class="colour" style="font-size: 14px;">Click on register if you are a new user!</p>
+	</div>
 	<div class="d-flex justify-content-center h-100">
+	 
 		<div class="card">
+		   
 			<div class="card-header">
 				<h3>Sign In</h3>
 				
@@ -133,6 +155,7 @@ margin-left: 4px;
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
+						
 						<input type="text" class="form-control" name="theSearchName" path="userName" placeholder="username"/>
 						
 					</div>
@@ -157,6 +180,7 @@ margin-left: 4px;
 				</div>
 			</div>
 		</div>
+		
 	</div>
 	</form:form>
 </div>

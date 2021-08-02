@@ -157,14 +157,14 @@ button:focus {
 							<div class="form-group" id="mnameID">
 								<label class="control-label " for="name"> Middle Name </label> <input
 									class="form-control" name="middleName" path="middleName"
-									placeholder="Enter your first name" type="text" /><span class="formerror"> </span>
+									placeholder="Enter your middle name" type="text" /><span class="formerror"> </span>
 									
 							</div>
 								 
 							<div class="form-group" id="lnameID">
 								<label class="control-label " for="name"> Last Name </label> <input
 									class="form-control" name="lastName" path="lastName"
-									placeholder="Enter your first name" type="text" required/><span class="formerror"> </span>
+									placeholder="Enter your last name" type="text" required/><span class="formerror"> </span>
 									
 							</div>
 							
@@ -230,21 +230,22 @@ button:focus {
 							
 								<div class="form-group">
 									<label class="control-label" for="select" > Marital
-										Status </label> <select class="select form-control" path="maritalStatus"
+										Status </label> <form:select class="select form-control" path="maritalStatus"
 										name="maritalStatus"  style="font-size:18px; color:gray">
 										<option value="" disabled selected hidden>Open this select menu</option>
 										<option value="Single">Single</option>
 										<option value="Married">Married</option>
-										<option value="Seperated">Seperated</option>
+										<option value="Seperated">Separated</option>
 										<option value="Divorced">Divorced</option>
 										<option value="Widow">Widow</option>
 										
-									</select>
+									</form:select> 
+									
 								</div>
 
 						
 							
-								<div class="form-group " id="ssnNumber">
+								<div class="form-group " id="ssnNumberID">
 									<label class="control-label " for="number"> SSN Number
 									</label> <input class="form-control"  name="ssnNumber" path="ssnNumber"
 										placeholder="SSN Number" type="number" required />
@@ -263,14 +264,14 @@ button:focus {
 								</div>
 							<div class="form-group ">
 									<label class="control-label " for="select"> Loan
-										purpose </label> <select class="select form-control" path="loanPurpose"
-										name="loanPurpose" style="font-size:18px; color:gray" required >
+										purpose </label> <form:select class="select form-control" path="loanPurpose"
+										name="loanPurpose" style="font-size:18px; color:gray" required="true">
 										<option value="" disabled selected hidden>Open this select menu</option>
 										<option value="Debt">Debt</option>
 										<option value="Home Loan">Home Loan</option>
 										<option value="Educational Loan">Educational Loan</option>
 										<option value="Personal Loan">Personal Loan</option>
-									</select>
+									</form:select>
 									
 								</div>
 								
@@ -374,29 +375,29 @@ button:focus {
 											name="Designation" path="designation" placeholder="Enter your designation"
 											type="text" required/><span class="formerror"> </span>
 									</div>
-								<!-- 	<div class="form-group ">
-										<label class="control-label " for="number5"> Experience
-											Code </label>
-											<span> <input class="form-control" id="number5" name="number5"
-											placeholder="In Years"
-											type="number" required/>
-											<input class="form-control" id="number5" name="number5"
-											placeholder="In Months"
-											type="number" required/>
-											</span>
+								
+								
+							
+								
+								<div class=blue-text>
+										<h5>
+											<i>Experience </i>
+										</h5>
 									</div>
-								 -->	
-								<div class="emp-right">
-							<span><b>Experience</b></span><span>&nbsp;&nbsp; <form:input
-									type="number" style="width: 80px;" path="experienceYear"
-									name="experienceYear" placeholder="Year" /> <form:errors
-									path="experienceYear" cssClass="error">
-								</form:errors> <form:input type="number" style="width: 80px;"
-									name="experienceMonth" path="experienceMonth"
-									placeholder="Month" /> <form:errors path="experienceMonth"
-									cssClass="error">
-							</form:errors>
-								</div>
+								<div class="form-group" id="expYearsID">
+										<label class="control-label " for="number"> Years
+											</label> <input class="form-control" name="ExperienceYear" path="experienceYear"
+											placeholder="Years"
+											type="number" required/><span class="formerror"> </span>
+									</div>
+									
+									<div class="form-group" id="expMonthsID">
+										<label class="control-label " for="number"> Months
+											 </label> <input class="form-control" name="ExperienceMonth" path="experienceMonth"
+											placeholder="Months"
+											type="number" required/><span class="formerror"> </span>
+									</div>
+								
 									<div class=blue-text>
 										<h5>
 											<i> Office Address </i>
@@ -449,10 +450,11 @@ button:focus {
 						
 					</div>
 					</div> 
+					</form:form>
 						</div>
-						</form:form>
+						
 					</div>
-				</div>
+				
 				<br>
 				<br>
 				</body>
@@ -460,7 +462,7 @@ button:focus {
 				function clearErrors(){
 
 				    errors = document.getElementsByClassName('formerror');
-				    for(let item of errors)
+				    for(let item in errors)
 				    {
 				        item.innerHTML = "";
 				    }
@@ -519,6 +521,18 @@ button:focus {
 					} 
 					
 					
+
+					/* 	-----------------------------------------ssn--------------------------------- */		
+					
+					//form name //fname is name
+					 /* var ssn=document.forms['sForm']["ssnNumber"].value;
+					 if(ssn<0){
+						//id //msg
+						seterror("ssnNumberID", "Must be greater than 0");
+						formValidated= false;
+					}  */
+					 
+					
 					
 					/* 	------------------------------------------LoanAmt--------------------------------- */		
 					
@@ -539,9 +553,9 @@ button:focus {
 					
 					//form name //fname is name
 					var homePhone=document.forms['sForm']["homePhone"].value;
-					if(homePhone.length!=10){
+					if(homePhone.length!=10 || homePhone<0){
 						//id //msg
-						seterror("homePhoneID", "Phone Number must be of 10 digits");
+						seterror("homePhoneID", "Phone Number must be of 10 digits positive number");
 						formValidated= false;
 					}  
 					
@@ -549,9 +563,9 @@ button:focus {
 					
 					//form name //fname is name
 					var OfficePhone=document.forms['sForm']["OfficePhone"].value;
-					if(OfficePhone.length!=10){
+					if(OfficePhone.length!=10 || OfficePhone<0){
 						//id //msg
-						seterror("OfficePhoneID", "Phone Number must be of 10 digits");
+						seterror("OfficePhoneID", "Phone Number must be of 10 digits positive number");
 						formValidated= false;
 					}  
 					
@@ -559,9 +573,9 @@ button:focus {
 					
 					//form name //fname is name
 					var Mobile=document.forms['sForm']["Mobile"].value;
-					if(Mobile.length!=10){
+					if(Mobile.length!=10 || Mobile<0){
 						//id //msg
-						seterror("MobileID", "Phone Number must be of 10 digits");
+						seterror("MobileID", "Phone Number must be of 10 digits positive number");
 						formValidated= false;
 					}  
 					
@@ -599,9 +613,9 @@ button:focus {
 					
 				 	//form name //fname is name
 					var PostalCode=document.forms['sForm']["PostalCode"].value;
-					if(PostalCode.length!=5){
+					if(PostalCode.length!=5 || PostalCode<0){
 						//id //msg
-						seterror("PostalCodeID", "Must be exactly 5 digit");
+						seterror("PostalCodeID", "Must be exactly 5 digit positive number");
 						formValidated= false;
 					}
 			
@@ -666,6 +680,25 @@ button:focus {
 					formValidated= false;
 				}
 				
+/* 	---------------------------------------Exp Year---------------------------------- */		
+				
+			 	//form name //fname is name
+				var expYear=document.forms['sForm']['ExperienceYear'].value;
+				if(expYear<0 || expYear>65){
+					//id //msg
+					seterror("expYearsID", "Must be between 0-65");
+					formValidated= false;
+				}
+				
+/* 	---------------------------------------Exp Year---------------------------------- */		
+				
+			 	//form name //fname is name
+				var expMonth=document.forms['sForm']['ExperienceMonth'].value;
+				if(expMonth<0 || expMonth>12){
+					//id //msg
+					seterror("expMonthsID", "Must be between 1-12");
+					formValidated= false;
+				}
 				
 				
 				console.log(formValidated);

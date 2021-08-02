@@ -31,7 +31,7 @@ margin-right: 20px;
 
 </head>
 <body>
-	<form:form class="vertical" method="get">
+	<form:form class="vertical" method="post">
 	<div class="container-fluid" align="center">
 		<div class="text-gray-700 body-font">
 	

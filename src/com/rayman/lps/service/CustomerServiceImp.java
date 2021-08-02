@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.rayman.lps.dao.CustomerDAO;
 import com.rayman.lps.mvc.Customer;
+import com.rayman.lps.mvc.User;
 
 @Service
 public class CustomerServiceImp implements CustomerService {
@@ -28,6 +29,8 @@ public class CustomerServiceImp implements CustomerService {
 		
 	}
 	
+	
+	
 	@Override
 	@Transactional
 	public Customer viewCustomer(int theId) {
@@ -46,24 +49,38 @@ public class CustomerServiceImp implements CustomerService {
 
 	@Override
 	@Transactional
+	public void updateCustomer(Customer theCustomer) {
+		customerDAO.updateCustomer(theCustomer);
+		
+	}
+
+	
+	@Override
+	@Transactional
 	public void deleteCustomer(int theId) {
 		customerDAO.deleteCustomer(theId);
 		
 	}
 
 
-	@Override
-	@Transactional
-	public List<Customer> searchCustomers(String theSearchName) {
-		
-		return customerDAO.searchCustomers(theSearchName);
-	}
-
+	
 
 	@Override
 	@Transactional
 	public List<Customer> getSortedCustomers(int theSortField) {
 		return customerDAO.getSortedCustomers(theSortField);
 	}
+
+
+	@Override
+	@Transactional
+	public List<Customer> searchCustomers(String theSearchName) {
+		return customerDAO.searchCustomers(theSearchName);
+	}
+
+
+	
+
+	
 
 }

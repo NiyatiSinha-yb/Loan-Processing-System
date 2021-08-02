@@ -99,6 +99,7 @@ select.form-control {
  
    
 <div class="container">
+
 <form:form method="post" action="/lpswithhibernate/user/registersearch" modelAttribute="user">
     <div class="row py-5 mt-4 align-items-center">
         <!-- For Demo Purpose -->
@@ -108,12 +109,16 @@ select.form-control {
             <p class="font-italic text-muted mb-0">Create an account and apply for loan at zero cost!</p>
             
         </div>
+        
          <i class="fa-user-md text-muted"></i>
-
+         <span style="color: red;">The username already exists!</span>
+         
+         <br><br>
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-6 ml-auto">
             
                 <div class="row">
+                
                     <div class="form-group">
 							<div class="input-group-prepend">
 								
@@ -153,20 +158,20 @@ select.form-control {
 								name="password" path="password" required="true"/>
 							
 						</div>
-						</div>
-						<br>
-             
-
+                       </div>
+                   
+<br>
                     <!-- Submit Button -->
                    
                         
                             <div class="flex justify-center">
 							<button
-								class="inline-flex text-white bg-blue-500 border-0 py-4 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg-100"
+								class="inline-flex text-white bg-blue-500 border-0 py-4 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg-120"
 							>Submit</button>
                     
                               </div>
-                      <br>
+
+                   <br>
                     <!-- Already Registered -->
                     <div class="text-center w-100">
                         <p class="text-muted font-weight-bold">Already Registered? <a href="/lpswithhibernate/user/login" class="text-primary ml-2">Login</a></p>

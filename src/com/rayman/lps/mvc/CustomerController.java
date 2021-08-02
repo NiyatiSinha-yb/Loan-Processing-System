@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -52,7 +54,7 @@ public class CustomerController {
 	//need to inject customerservice instead
 	@Autowired
 	private CustomerService customerService;
-	@GetMapping("/viewForm")
+	@RequestMapping("/viewForm")
 	public String viewForm(Model theModel)
 	{
 		//get customers from DAO
@@ -63,7 +65,12 @@ public class CustomerController {
 	}
 	
 	
-	
+
+	@RequestMapping("/homePage")
+	public String firstPage(Model theModel)
+	{
+		return "main-menu";
+	}
 	
 	@RequestMapping("/contactUs")
 	public String contactUs(Model theModel)
@@ -93,20 +100,21 @@ public class CustomerController {
 	public String showFormForUpdate(@RequestParam("ID") int theId, Model theModel)
 	{
 		//get the customer from our service
-		Customer theCustomer=customerService.getCustomer(theId);
+		Customer theCustomer= new Customer();
+		theCustomer=customerService.getCustomer(theId);
 		//set customer as a model attribute
 		theModel.addAttribute("customer",theCustomer);
 		//send over to the form
 		return "updateapplication";
 	}
-	@GetMapping("/showFormForDelete")
+	@RequestMapping("/showFormForDelete")
 	public String deleteCustomer(@RequestParam("customerID") int theId)
 	{
 		customerService.deleteCustomer(theId);
 		return "redirect:viewForm";
 	}
 	
-	@GetMapping("/showFormForView")
+	@RequestMapping("/showFormForView")
 	public String viewCustomer(@RequestParam("ID") int theId, Model theModel)
 	{//view the customer from our service
 		Customer theCustomer=customerService.viewCustomer(theId);
@@ -116,7 +124,7 @@ public class CustomerController {
 		return "ReadOnlyApplication";
 	}
 	
-	@GetMapping("/search")
+	@RequestMapping("/search")
     public String searchCustomers(@RequestParam("theSearchName") String theSearchName,
                                     Model theModel) {
         // search customers from the service
@@ -126,6 +134,7 @@ public class CustomerController {
         theModel.addAttribute("customer", theCustomers);
         return "viewApplication";        
     }
+	
 	@RequestMapping("/processForm")
 	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer,BindingResult theBindingResult)
 	{
@@ -136,10 +145,27 @@ public class CustomerController {
 		}
 		else
 		{
-			customerService.saveCustomer(theCustomer);
+			customerService.updateCustomer(theCustomer);
 			return "customer-confirmation";
 		}
 	}
+	
+	@RequestMapping("/processForm2")
+	public String processForm2(@Valid @ModelAttribute("customer") Customer theCustomer,BindingResult theBindingResult)
+	{
+		if(theBindingResult.hasErrors())
+		{
+			
+			return "updateapplication";
+		}
+		else
+		{
+			customerService.updateCustomer(theCustomer);
+			return "customer-confirmation";
+		}
+	}
+	
+	
 	
 	@GetMapping("/list")
 	public String listCustomers(Model theModel, @RequestParam(required=false) String sort) {
