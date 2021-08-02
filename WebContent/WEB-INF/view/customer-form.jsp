@@ -1,4 +1,4 @@
- <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -50,9 +50,9 @@ body {
 	background-image:
 		/*  url("https://source.unsplash.com/1515x2990/?money,bank, cash,twenty dollar");
 		url("https://thumbs.dreamstime.com/b/vertical-dome-utah-state-capital-building-pale-blue-sky-background-grand-columns-balcony-illuminated-bright-147968946.jpg"); */
-		url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/483000/483736-capitol-hill-utah.jpg"); 
+		url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/483000/483736-capitol-hill-utah.jpg");
 	background-repeat: no-repeat;
-	   background-size: 260% 100%   
+	background-size: 260% 100%
 }
 
 .card {
@@ -77,8 +77,9 @@ body {
 .form-control-label {
 	margin-bottom: 0
 }
-.formerror{
-	color:red;
+
+.formerror {
+	color: red;
 }
 
 input, textarea, button {
@@ -99,8 +100,9 @@ input:focus, textarea:focus {
 	outline-width: 0;
 	font-weight: 400
 }
-option{
-color: black;
+
+option {
+	color: black;
 }
 
 .btn-block {
@@ -121,7 +123,6 @@ button:focus {
 	box-shadow: none;
 	outline-width: 0
 }
-
 </style>
 
 <body>
@@ -133,13 +134,15 @@ button:focus {
 			<h5 class="text-center mb-4">
 				<b><i>Loan Applicant Entry Form</i></b>
 			</h5>
-		<%-- 	<form class="form-card" method="post" action="processForm" name="sForm" modelAttribute="customer" onsubmit="return validateForm()"> --%>
-				<form:form class="form-card" method="post" action="processForm" name="sForm" modelAttribute="customer" onsubmit="return validateForm()">
+			<%-- 	<form class="form-card" method="post" action="processForm" name="sForm" modelAttribute="customer" onsubmit="return validateForm()"> --%>
+			<form:form class="form-card" method="post" action="processForm"
+				name="sForm" modelAttribute="customer"
+				onsubmit="return validateForm()">
 				<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
 				<div class="bootstrap-iso">
 					<div class="container-fluid">
 						<div class="row">
-						
+
 							<br>
 							<div class=blue-text>
 
@@ -150,39 +153,43 @@ button:focus {
 							<div class="form-group" id="fnameID">
 								<label class="control-label " for="name"> First Name </label> <input
 									class="form-control" name="firstName" path="firstName"
-									placeholder="Enter your first name" type="text" required/><span class="formerror"> </span>
-									
+									placeholder="Enter your first name" type="text" required /><span
+									class="formerror"> </span>
+
 							</div>
-						
+
 							<div class="form-group" id="mnameID">
 								<label class="control-label " for="name"> Middle Name </label> <input
 									class="form-control" name="middleName" path="middleName"
-									placeholder="Enter your middle name" type="text" /><span class="formerror"> </span>
-									
+									placeholder="Enter your middle name" type="text" /><span
+									class="formerror"> </span>
+
 							</div>
-								 
+
 							<div class="form-group" id="lnameID">
 								<label class="control-label " for="name"> Last Name </label> <input
 									class="form-control" name="lastName" path="lastName"
-									placeholder="Enter your last name" type="text" required/><span class="formerror"> </span>
-									
+									placeholder="Enter your last name" type="text" required /><span
+									class="formerror"> </span>
+
 							</div>
-							
-								<div class="form-group ">
-									<label class="control-label" for="date"> Date </label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-calendar"> </i>
-										</div>
-										<input class="form-control" name="dateOfBirth" path="dateOfBirth" type="date"
-											placeholder="DD-MM-YYYY" required/>
+
+							<div class="form-group" id="dobID">
+								<label class="control-label" for="date"> Date </label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"> </i>
 									</div>
+									<input class="form-control" name="dateOfBirth"
+										path="dateOfBirth" type="date" placeholder="DD-MM-YYYY"
+										required /><span class="formerror"> </span>
 								</div>
-						
+							</div>
+
 						</div>
 					</div>
 				</div>
-			
+
 
 
 
@@ -227,242 +234,273 @@ button:focus {
 									<i> Personal details </i>
 								</h4>
 							</div>
-							
-								<div class="form-group">
-									<label class="control-label" for="select" > Marital
-										Status </label> <form:select class="select form-control" path="maritalStatus"
-										name="maritalStatus"  style="font-size:18px; color:gray">
-										<option value="" disabled selected hidden>Open this select menu</option>
-										<option value="Single">Single</option>
-										<option value="Married">Married</option>
-										<option value="Seperated">Separated</option>
-										<option value="Divorced">Divorced</option>
-										<option value="Widow">Widow</option>
-										
-									</form:select> 
-									
-								</div>
 
-						
-							
-								<div class="form-group " id="ssnNumberID">
-									<label class="control-label " for="number"> SSN Number
-									</label> <input class="form-control"  name="ssnNumber" path="ssnNumber"
-										placeholder="SSN Number" type="number" required />
-										
-								</div>
+							<div class="form-group">
+								<label class="control-label" for="select"> Marital
+									Status </label>
+								<form:select class="select form-control" path="maritalStatus"
+									name="maritalStatus" style="font-size:18px; color:gray">
+									<option value="" disabled selected hidden>Open this
+										select menu</option>
+									<option value="Single">Single</option>
+									<option value="Married">Married</option>
+									<option value="Seperated">Separated</option>
+									<option value="Divorced">Divorced</option>
+									<option value="Widow">Widow</option>
 
-								<br> <br>
-								<div class=blue-text>
-									<h4>
-										<i> Loan details </i>
-									</h4>
-								</div>
-									<div class="form-group" id="LoanAmtID">
-									<label class="control-label" for="number1"> Loan
-										Amount </label> <input class="form-control" name="loanAmount" path="loanAmount" placeholder="Loan Amount in $" type="number" required/><span class="formerror"> </span>
-								</div>
+								</form:select>
+
+							</div>
+
+
+
+							<div class="form-group " id="ssnNumberID">
+								<label class="control-label " for="number"> SSN Number </label>
+								<input class="form-control" name="ssnNumber" path="ssnNumber"
+									placeholder="SSN Number" type="number" required /><span
+									class="formerror"> </span>
+
+							</div>
+
+							<br> <br>
+							<div class=blue-text>
+								<h4>
+									<i> Loan details </i>
+								</h4>
+							</div>
+							<div class="form-group" id="LoanAmtID">
+								<label class="control-label" for="number1"> Loan Amount
+								</label> <input class="form-control" name="loanAmount" path="loanAmount"
+									placeholder="Loan Amount in $" type="number" required /><span
+									class="formerror"> </span>
+							</div>
 							<div class="form-group ">
-									<label class="control-label " for="select"> Loan
-										purpose </label> <form:select class="select form-control" path="loanPurpose"
-										name="loanPurpose" style="font-size:18px; color:gray" required="true">
-										<option value="" disabled selected hidden>Open this select menu</option>
-										<option value="Debt">Debt</option>
-										<option value="Home Loan">Home Loan</option>
-										<option value="Educational Loan">Educational Loan</option>
-										<option value="Personal Loan">Personal Loan</option>
-									</form:select>
-									
-								</div>
-								
-								<div class="form-group " id="DescriptionID">
-									<label class="control-label " for="message">
-										Description </label>
-									<textarea class="form-control" cols="40" id="desc" path="description"
-										name="Description" placeholder="Loan Application Reason" rows="10"></textarea><span class="formerror"> </span>
-								</div>
+								<label class="control-label " for="select"> Loan purpose
+								</label>
+								<form:select class="select form-control" path="loanPurpose"
+									name="loanPurpose" style="font-size:18px; color:gray"
+									required="true">
+									<option value="" disabled selected hidden>Open this
+										select menu</option>
+									<option value="Debt">Debt</option>
+									<option value="Home Loan">Home Loan</option>
+									<option value="Educational Loan">Educational Loan</option>
+									<option value="Personal Loan">Personal Loan</option>
+								</form:select>
 
-								<br> <br>
-								<div class=blue-text>
-									<h4>
-										<i> Contact details </i>
-									</h4>
-								</div>
+							</div>
 
-								<div class="form-group " id="homePhoneID">
-									<label class="control-label " for="number2"> Home Phone
-									</label> <input class="form-control" id="hPhone" name="homePhone" path="homePhone"
-										placeholder="Enter your 10 digit residential contact number"
-										type="number" required/><span class="formerror"> </span>
-								</div>
-								<div class="form-group "  id="OfficePhoneID">
-									<label class="control-label " for="number3"> Office
-										Phone </label> <input class="form-control" name="OfficePhone" path="officePhone"
-										placeholder="Enter your 10 digit office contact number"
-										type="number" required/><span class="formerror"> </span>
-								</div>
-								<div class="form-group " id="MobileID" >
-									<label class="control-label " for="number4"> Mobile </label> <input
-										class="form-control" name="Mobile" path="mobile"
-										placeholder="Enter your 10 digit personal contact number" 
-										type="number" required/><span class="formerror"> </span>
-										
-								</div>
-								<div class="form-group" id="EmailAddressID">
-									<label class="control-label requiredField" for="email">
-										Email Address <span class="asteriskField"> * </span>
-									</label> <input class="form-control"  name="EmailAddress" path="emailAddress"
-										placeholder="username@domain" type="email" required/><span class="formerror"> </span>
-								</div>
-								
-								<br> <br>
-								<div class=blue-text>
-									<h4>
-										<i> Address details </i>
-									</h4>
-								</div>
-								
-								<div class="form-group " id="Address1ID">
-									<label class="control-label " for="text"> Address Line
-										1 </label> <input class="form-control" name="Address1" path="address1"
-										placeholder="House Number" type="text" required/><span class="formerror"> </span>
-								</div>
-								<div class="form-group " id="Address2ID">
-									<label class="control-label " for="text2"> Address Line
-										2 </label> <input class="form-control" name="Address2" path="address2"
-										placeholder="Street, Colony" type="text" /><span class="formerror"> </span>
-								</div>
-							
-								<div class="form-group " id="CityID">
-									<label class="control-label " for="subject"> City </label> <input
-										class="form-control" name="City" path="city"
-										placeholder="City" type="text" required/><span class="formerror"> </span>
-								</div>
-								<div class="form-group " id="StateID">
-									<label class="control-label " for="subject1"> State </label> <input
-										class="form-control" name="State" path="state"
-										placeholder="State" type="text" required/><span class="formerror"> </span>
-								</div>
-								<div class="form-group" id="PostalCodeID">
-									<label class="control-label " for="number5"> Postal
-										Code </label> <input class="form-control" name="PostalCode" path="postalCode"
-										placeholder="Enter your 5 digit postal code" type="number" required/><span class="formerror"> </span>
-								</div>
-			
-								<br> <br>
-								<div class=blue-text>
-									<h4>
-										<i> Employment details </i>
-									</h4>
-								</div>
-								
+							<div class="form-group " id="DescriptionID">
+								<label class="control-label " for="message"> Description
+								</label>
+								<textarea class="form-control" cols="40" id="desc"
+									path="description" name="Description"
+									placeholder="Loan Application Reason" rows="10"></textarea>
+								<span class="formerror"> </span>
+							</div>
 
-								
-									<div class="form-group " id="EmployerNameID">
-										<label class="control-label " for="name2"> Employer
-											Name </label> <input class="form-control"  name="EmployerName" path="employerName"
-											placeholder="Enter your current employer name" type="text" required/><span class="formerror"> </span>
-									</div>
-									<div class="form-group" id="AnnualSalaryID">
-										<label class="control-label " for="number"> Annual
-											Salary </label> <input class="form-control" name="AnnualSalary" path="annualSalary"
-											placeholder="Enter your annual salary for the current year"
-											type="number" required/><span class="formerror"> </span>
-									</div>
-									<div class="form-group " id="DesignationID">
-										<label class="control-label " for="subject">
-											Designation </label> <input class="form-control"
-											name="Designation" path="designation" placeholder="Enter your designation"
-											type="text" required/><span class="formerror"> </span>
-									</div>
-								
-								
-							
-								
-								<div class=blue-text>
-										<h5>
-											<i>Experience </i>
-										</h5>
-									</div>
-								<div class="form-group" id="expYearsID">
-										<label class="control-label " for="number"> Years
-											</label> <input class="form-control" name="ExperienceYear" path="experienceYear"
-											placeholder="Years"
-											type="number" required/><span class="formerror"> </span>
-									</div>
-									
-									<div class="form-group" id="expMonthsID">
-										<label class="control-label " for="number"> Months
-											 </label> <input class="form-control" name="ExperienceMonth" path="experienceMonth"
-											placeholder="Months"
-											type="number" required/><span class="formerror"> </span>
-									</div>
-								
-									<div class=blue-text>
-										<h5>
-											<i> Office Address </i>
-										</h5>
-									</div>
-									<div class="form-group " id="EmpAddress1ID">
-									<label class="control-label " for="text"> Address Line
-										1 </label> <input class="form-control" name="EmpAddress1" path="empAddress1"
-										placeholder="House Number" type="text" required/><span class="formerror"> </span>
-								</div>
-								<div class="form-group " id="EmpAddress2ID">
-									<label class="control-label " for="text2"> Address Line
-										2 </label> <input class="form-control" name="EmpAddress2" path="empAddress2"
-										placeholder="Street, Colony" type="text" /><span class="formerror"> </span>
-								</div>
-							
-								<div class="form-group " id="EmpCityID">
-									<label class="control-label " for="subject"> City </label> <input
-										class="form-control" name="EmpCity" path="empCity"
-										placeholder="City" type="text" required/><span class="formerror"> </span>
-								</div>
-								<div class="form-group " id="empStateID">
-									<label class="control-label " for="subject1"> State </label> <input
-										class="form-control" name="empState" path="empState"
-										placeholder="State" type="text" required/><span class="formerror"> </span>
-								</div>
-								<div class="form-group" id="empPostalID">
-									<label class="control-label " for="number5"> Postal
-										Code </label> <input class="form-control" name="empPostal"  path="empPostal"
-										placeholder="Enter your 5 digit postal code" type="number" required/><span class="formerror"> </span>
-								</div>
-									
-									<div class="flex justify-center">
-							<button
-								class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="processForm"><p style ="color:white; padding-top: 5px;">Submit</p></button>
+							<br> <br>
+							<div class=blue-text>
+								<h4>
+									<i> Contact details </i>
+								</h4>
+							</div>
+
+							<div class="form-group " id="homePhoneID">
+								<label class="control-label " for="number2"> Home Phone
+								</label> <input class="form-control" id="hPhone" name="homePhone"
+									path="homePhone"
+									placeholder="Enter your 10 digit residential contact number"
+									type="number" required /><span class="formerror"> </span>
+							</div>
+							<div class="form-group " id="OfficePhoneID">
+								<label class="control-label " for="number3"> Office
+									Phone </label> <input class="form-control" name="OfficePhone"
+									path="officePhone"
+									placeholder="Enter your 10 digit office contact number"
+									type="number" required /><span class="formerror"> </span>
+							</div>
+							<div class="form-group " id="MobileID">
+								<label class="control-label " for="number4"> Mobile </label> <input
+									class="form-control" name="Mobile" path="mobile"
+									placeholder="Enter your 10 digit personal contact number"
+									type="number" required /><span class="formerror"> </span>
+
+							</div>
+							<div class="form-group" id="EmailAddressID">
+								<label class="control-label requiredField" for="email">
+									Email Address <span class="asteriskField"> * </span>
+								</label> <input class="form-control" name="EmailAddress"
+									path="emailAddress" placeholder="username@domain" type="email"
+									required /><span class="formerror"> </span>
+							</div>
+
+							<br> <br>
+							<div class=blue-text>
+								<h4>
+									<i> Address details </i>
+								</h4>
+							</div>
+
+							<div class="form-group " id="Address1ID">
+								<label class="control-label " for="text"> Address Line 1
+								</label> <input class="form-control" name="Address1" path="address1"
+									placeholder="House Number" type="text" required /><span
+									class="formerror"> </span>
+							</div>
+							<div class="form-group " id="Address2ID">
+								<label class="control-label " for="text2"> Address Line
+									2 </label> <input class="form-control" name="Address2" path="address2"
+									placeholder="Street, Colony" type="text" /><span
+									class="formerror"> </span>
+							</div>
+
+							<div class="form-group " id="CityID">
+								<label class="control-label " for="subject"> City </label> <input
+									class="form-control" name="City" path="city" placeholder="City"
+									type="text" required /><span class="formerror"> </span>
+							</div>
+							<div class="form-group " id="StateID">
+								<label class="control-label " for="subject1"> State </label> <input
+									class="form-control" name="State" path="state"
+									placeholder="State" type="text" required /><span
+									class="formerror"> </span>
+							</div>
+							<div class="form-group" id="PostalCodeID">
+								<label class="control-label " for="number5"> Postal Code
+								</label> <input class="form-control" name="PostalCode" path="postalCode"
+									placeholder="Enter your 5 digit postal code" type="number"
+									required /><span class="formerror"> </span>
+							</div>
+
+							<br> <br>
+							<div class=blue-text>
+								<h4>
+									<i> Employment details </i>
+								</h4>
+							</div>
+
+
+
+							<div class="form-group " id="EmployerNameID">
+								<label class="control-label " for="name2"> Employer Name
+								</label> <input class="form-control" name="EmployerName"
+									path="employerName"
+									placeholder="Enter your current employer name" type="text"
+									required /><span class="formerror"> </span>
+							</div>
+							<div class="form-group" id="AnnualSalaryID">
+								<label class="control-label " for="number"> Annual
+									Salary </label> <input class="form-control" name="AnnualSalary"
+									path="annualSalary"
+									placeholder="Enter your annual salary for the current year"
+									type="number" required /><span class="formerror"> </span>
+							</div>
+							<div class="form-group " id="DesignationID">
+								<label class="control-label " for="subject"> Designation
+								</label> <input class="form-control" name="Designation"
+									path="designation" placeholder="Enter your designation"
+									type="text" required /><span class="formerror"> </span>
+							</div>
+
+
+
+
+							<div class=blue-text>
+								<h5>
+									<i>Experience </i>
+								</h5>
+							</div>
+							<div class="form-group" id="expYearsID">
+								<label class="control-label " for="number"> Years </label> <input
+									class="form-control" name="ExperienceYear"
+									path="experienceYear" placeholder="Years" type="number"
+									required /><span class="formerror"> </span>
+							</div>
+
+							<div class="form-group" id="expMonthsID">
+								<label class="control-label " for="number"> Months </label> <input
+									class="form-control" name="ExperienceMonth"
+									path="experienceMonth" placeholder="Months" type="number"
+									required /><span class="formerror"> </span>
+							</div>
+
+							<div class=blue-text>
+								<h5>
+									<i> Office Address </i>
+								</h5>
+							</div>
+							<div class="form-group " id="EmpAddress1ID">
+								<label class="control-label " for="text"> Address Line 1
+								</label> <input class="form-control" name="EmpAddress1"
+									path="empAddress1" placeholder="House Number" type="text"
+									required /><span class="formerror"> </span>
+							</div>
+							<div class="form-group " id="EmpAddress2ID">
+								<label class="control-label " for="text2"> Address Line
+									2 </label> <input class="form-control" name="EmpAddress2"
+									path="empAddress2" placeholder="Street, Colony" type="text" /><span
+									class="formerror"> </span>
+							</div>
+
+							<div class="form-group " id="EmpCityID">
+								<label class="control-label " for="subject"> City </label> <input
+									class="form-control" name="EmpCity" path="empCity"
+									placeholder="City" type="text" required /><span
+									class="formerror"> </span>
+							</div>
+							<div class="form-group " id="empStateID">
+								<label class="control-label " for="subject1"> State </label> <input
+									class="form-control" name="empState" path="empState"
+									placeholder="State" type="text" required /><span
+									class="formerror"> </span>
+							</div>
+							<div class="form-group" id="empPostalID">
+								<label class="control-label " for="number5"> Postal Code
+								</label> <input class="form-control" name="empPostal" path="empPostal"
+									placeholder="Enter your 5 digit postal code" type="number"
+									required /><span class="formerror"> </span>
+							</div>
+
+							<div class="flex justify-center">
+								<button
+									class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+									formaction="processForm">
+									<p style="color: white; padding-top: 5px;">Submit</p>
+								</button>
 								<span>&nbsp;</span>
-							<button
-								class="ml-4 inline-flex text-red bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="viewForm"><p style ="color:white; padding-top: 5px;">Refresh Form</p></button>
-							<span>&nbsp;</span>
-							<button
-								class="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-								formaction="/"><p style ="color:white; padding-top: 5px;">Home</p></button>
-						
-						</div> 
+								<button
+									class="ml-4 inline-flex text-red bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+									formaction="viewForm">
+									<p style="color: white; padding-top: 5px;">Refresh Form</p>
+								</button>
+								<span>&nbsp;</span>
+								<button
+									class="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+									formaction="/">
+									<p style="color: white; padding-top: 5px;">Home</p>
+								</button>
 
-							
+							</div>
+
+
 						</div>
-						
+
 					</div>
-					</div> 
-					</form:form>
-						</div>
-						
-					</div>
-				
-				<br>
-				<br>
-				</body>
-				<script>
+				</div>
+			</form:form>
+		</div>
+
+	</div>
+
+	<br>
+	<br>
+</body>
+<script>
 				function clearErrors(){
 
 				    errors = document.getElementsByClassName('formerror');
-				    for(let item in errors)
+				    for(let item of errors)
 				    {
 				        item.innerHTML = "";
 				    }
@@ -525,12 +563,12 @@ button:focus {
 					/* 	-----------------------------------------ssn--------------------------------- */		
 					
 					//form name //fname is name
-					 /* var ssn=document.forms['sForm']["ssnNumber"].value;
-					 if(ssn<0){
-						//id //msg
+					  var ssno=document.forms['sForm']["ssnNumber"].value;
+					 if(ssno.length<0){
+						//id //msgssnNumberID
 						seterror("ssnNumberID", "Must be greater than 0");
 						formValidated= false;
-					}  */
+					}  
 					 
 					
 					
@@ -660,6 +698,17 @@ button:focus {
 					formValidated= false;
 				}
 				
+				/* else if (!/[^a-zA-Z]/.test(EmpCity)){
+					seterror("EmpCityID", "Only input alphabets");
+					formValidated= false;
+				} */
+				/* 	var letters = /^[A-Za-z]+$/;
+				   if(!(inputtxt.value.match(EmpCity)))
+					   {
+					   seterror("EmpCityID", "Only input alphabets");
+						formValidated= false;
+					   } */
+				
 /* 	-----------------------------------------State---------------------------------- */		
 				
 				//form name //fname is name
@@ -683,12 +732,17 @@ button:focus {
 /* 	---------------------------------------Exp Year---------------------------------- */		
 				
 			 	//form name //fname is name
-				var expYear=document.forms['sForm']['ExperienceYear'].value;
-				if(expYear<0 || expYear>65){
-					//id //msg
-					seterror("expYearsID", "Must be between 0-65");
-					formValidated= false;
-				}
+var expYear=document.forms['sForm']['ExperienceYear'].value;
+if(expYear<0 ){
+//id //msg
+seterror("expYearsID", "Must be between 0-65");
+formValidated= false;
+}
+else if(expYear>65 ){
+//id //msg
+seterror("expYearsID", "You are an overworker! Now enjoy your life! ");
+formValidated= false;
+}
 				
 /* 	---------------------------------------Exp Year---------------------------------- */		
 				
@@ -699,6 +753,44 @@ button:focus {
 					seterror("expMonthsID", "Must be between 1-12");
 					formValidated= false;
 				}
+				
+/* -----------------------------------------Status validation------------------------*/
+				if(expYear==0 && expMonth<6){
+					seterror("expYearsID", "To be eligible to apply for loan you should atleast have an experience of 6 months!");
+					seterror("expMonthsID", "To be eligible to apply for loan you should atleast have an experience of 6 months!");
+					formValidated= false;
+				}
+				
+				
+			 	var objectHTMLCollection=new Date(document.forms['sForm']['dateOfBirth'].value);
+			 /*   var dobstr = [].map.call( objectHTMLCollection, function(node){
+			        return node.textContent || node.innerText || "";
+			    }).join(""); */
+			    var dob= new Date(objectHTMLCollection);
+				 //   console.log(dob);
+				 //   console.log(typeof(dob))l
+					//calculate month difference from current date in time
+			   		 var month_diff = Date.now() - dob.getTime();
+					//id //msg
+					
+					//convert the calculated difference in date format
+    				var age_dt = new Date(month_diff); 
+    	
+    				//extract year from date    
+   					 var year = age_dt.getUTCFullYear();
+    
+    				//now calculate the age of the user
+   					 var age = (year - 1970);
+    				if(age<18){
+					seterror("dobID", "Loan Applicant must be above 18 years old");
+					formValidated= false;
+    				}
+					else if(age>100){
+    					seterror("dobID", "ABC Bank doesn't know any person who lived for more than 100 years!");
+						formValidated= false;
+    				}
+				
+					
 				
 				
 				console.log(formValidated);

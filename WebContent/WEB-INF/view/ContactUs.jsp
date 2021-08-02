@@ -139,6 +139,8 @@
   </div>
     </div>
     <div class="flip-card-back" style="padding: 70px;">
+      <h2 style="background-color: white; color: black;">Team Entwicklers</h2>
+      <br>
       <h3>Niyati.Sinha@fico.com</h3>
       <p>Software Engineer Intern</p>
       <p>PTSO Team</p>
@@ -161,6 +163,9 @@
   </div>
     </div>
     <div class="flip-card-back" style="padding: 70px;">
+    
+      <h2 style="background-color: white; color: black;">Team Entwicklers</h2>
+      <br>
       <h3>Rayman.Ahluwalia@fico.com</h3>
       <p>Software Engineer Intern</p>
       <p>PTSO Team</p>
