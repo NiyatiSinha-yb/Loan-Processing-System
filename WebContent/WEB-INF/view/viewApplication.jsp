@@ -238,7 +238,7 @@ color: red;
 	rel="stylesheet">
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script >
-function alertf()({
+function alertf(){
 Swal.fire({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",
@@ -256,6 +256,8 @@ Swal.fire({
     )
   }
 })
+
+return false;
 }
 </script>
 </head>
