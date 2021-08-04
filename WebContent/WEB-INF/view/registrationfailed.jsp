@@ -24,6 +24,18 @@
 	href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
 	rel="stylesheet">
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+ window.addEventListener('load', (event) => {
+	 Swal.fire(
+			  'Registration failed!',
+			  'The username already exists!',
+			  'error'
+			)
+});
+</script> 
 </head>
 <style>
 .border-md {
@@ -110,8 +122,6 @@ select.form-control {
             
         </div>
         
-         <i class="fa-user-md text-muted"></i>
-         <span style="color: red;">The username already exists!</span>
          
          <br><br>
         <!-- Registeration Form -->

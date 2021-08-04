@@ -118,7 +118,7 @@ select.form-control {
 							<div class="input-group-prepend">
 								
 								<i class="fa fa-user text-muted"></i> <label for="uname">First
-									Name:</label> <input type="text" class="form-control"
+									Name:</label> <form:input type="text" class="form-control"
 									placeholder="First Name" name="firstName" path="firstName" required="true"/> </span>
 							</div>
 
@@ -128,7 +128,7 @@ select.form-control {
 						<div class="input-group-prepend">
 								
 								<i class="fa fa-user text-muted"></i>
-							<label for="uname">Last Name:</label> <input type="text"
+							<label for="uname">Last Name:</label> <form:input type="text"
 								class="form-control" placeholder="last Name"
 								name="lastName" path="lastName" required="true"/>
 						</div>
@@ -138,7 +138,7 @@ select.form-control {
 						<div class="input-group-prepend">
 								
 								<i class="fa fa-user text-muted"></i>
-							<label for="uname">User Name:</label> <input type="text"
+							<label for="uname">User Name:</label> <form:input type="text"
 								class="form-control"  placeholder="User Name"
 								name="userName" path="userName" required="true"/>
 						</div>
@@ -148,7 +148,7 @@ select.form-control {
                             
                                 <i class="fa fa-lock text-muted"></i>
                             
-							<label for="uname">Password:</label> <input type="password"
+							<label for="uname">Password:</label> <form:input type="password"
 								class="form-control"  placeholder="Password"
 								name="password" path="password" required="true"/>
 							
@@ -176,9 +176,9 @@ select.form-control {
             
         </div>
     </div>
+    </form:form>
    </div> 
-   </form:form>
-</div>
+   
 
 
 <script>

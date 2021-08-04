@@ -236,7 +236,28 @@ color: red;
 <meta charset="UTF-8">
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
 	rel="stylesheet">
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script >
+function alertf()({
+Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+  }
+})
+}
+</script>
 </head>
 <style>
 #customers {
@@ -310,7 +331,7 @@ color: red;
 	padding-top: 12px;
 	padding-bottom: 12px;
 	text-align: left;
-	background-color: #778899;
+	background-color: #1E90FF;
 	color: white;
 	text-align: center;
 }
@@ -330,7 +351,7 @@ color: red;
 	padding: 5px 10px;
 	color: white;
 	margin-bottom: 15px;
-	background: #778899;
+	background: #1E90FF;
 }
 .view{
 color: blue;
@@ -410,20 +431,20 @@ color: red;
 
 
 	<button
-		class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+		class="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
 		formaction="/lpswithhibernate/customer/showForm" id="button1">
 		<b>Add a customer</b>
 		
 	</button>
 	<span>&nbsp;&nbsp;</span>
 	<button
-		class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+		class="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
 		formaction="/lpswithhibernate/customer/viewForm" id="button2">
 		<b>Refresh Applications</b>
 	</button>
 	<span>&nbsp;&nbsp;</span>
 	<button
-		class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+		class="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
 		formaction="/lpswithhibernate/user/homePage" id="button3">
 		<b>Home</b>
 	</button>

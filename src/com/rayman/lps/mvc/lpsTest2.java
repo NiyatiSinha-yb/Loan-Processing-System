@@ -1,4 +1,4 @@
-package com.rayman.lps.test;
+package com.rayman.lps.mvc;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import com.rayman.lps.service.CustomerServiceImp;
 
 @SpringBootTest
 //@ExtendWith(SpringExtension.class)
-public class lpsTest {
+public class lpsTest2 {
 	@Autowired
 	private CustomerService customerServiceImp;
 	@Autowired

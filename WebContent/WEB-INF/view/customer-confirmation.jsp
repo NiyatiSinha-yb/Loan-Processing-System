@@ -75,21 +75,18 @@ Postal Code: ${customer.postalCode}-->
 					accepted or not.<br><br>
 					<div class="flex justify-center">
 							<button
-		class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-		formaction="/lpswithhibernate/user/homePage" id="button1">
-		<b>Home</b>
-		
-	</button>
-	<span>&nbsp;&nbsp;</span>
-	<button
-		class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
-		formaction="/lpswithhibernate/customer/viewForm" id="button2">
-		<b>View All Applications</b>
-	</button>
+								class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+								formaction="/lpswithhibernate/user/homePage">Home</button>
+								<span>&nbsp;&nbsp;</span>
+							<button
+								class="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg"
+								formaction="/lpswithhibernate/customer/viewForm">View All Applications</button>
 						</div>
 					<!-- <button class="button1" value="Submit" formaction="/lpswithhibernate/">Home</button>
    <button class="button2" value="View" formaction="/lpswithhibernate/customer/viewForm">View Applications</button> -->
 				</p> </font>
+				
+				
 
 		</div>
 		</form:form>

@@ -1,4 +1,11 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
+encoding//WebContent/WEB-INF/view/newlogin.jsp=UTF-8
+=======
 encoding//WebContent/WEB-INF/view/customer-form.jsp=UTF-8
+<<<<<<< HEAD
 encoding//WebContent/WEB-INF/view/viewApplication.jsp=UTF-8
+=======
+>>>>>>> 81981fe1f561b0e1bfac12ca39d9fadda9c86a5a
+>>>>>>> c635b0d7c136b984e4190afcceafae9ca35d4049
 encoding//src/com/rayman/lps/mvc/Customer.java=UTF-8

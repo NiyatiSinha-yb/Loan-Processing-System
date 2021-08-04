@@ -139,6 +139,7 @@ button:focus {
 				<h4>Applicant ID:- ${customer.ID }</h4>
 				<h4>Applicant Name:- ${customer.firstName }</h4>
 				<h4>Loan Purpose:- ${customer.loanPurpose }</h4>
+				<h4>Application Status:-<span style="color: green;">APPROVED</span></h4>
 				<div class="bootstrap-iso">
 					<div class="container-fluid">
 						<div class="row">

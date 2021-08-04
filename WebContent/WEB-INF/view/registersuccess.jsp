@@ -16,15 +16,22 @@
 
 	
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function popup() {
+        window.open("../popup/searchspring", 'window', 'width=200,height=100');
+    }
+</script> 
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
 
  window.addEventListener('load', (event) => {
 	 Swal.fire(
-			  'Login failed!',
-			  'Click on register if you are a new user!',
-			  'warning'
+			  'Registration Successful!',
+			  'Login to continue!',
+			  'success'
 			)
 });
 </script> 
@@ -132,15 +139,15 @@ color: yellow;
 margin-left: 4px;
 }
 .msg{
-
+font-size:20px;
 align: center;
 }
-
 </style>
 <body>
 <div class="container">
 
-	 
+	<!-- <span>Check your credentials</span>
+	<p class="colour" style="font-size: 14px;">Click on register if you are a new user!</p> -->
 	
 <form:form method="post" modelAttribute="user" action="/lpswithhibernate/user/search">
 

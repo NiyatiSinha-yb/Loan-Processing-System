@@ -93,7 +93,7 @@ public class UserController {
 	
 	@RequestMapping("/registersearch")
     public String searchRegisteredUsers(@RequestParam("userName") String theRegisteredSearchName,
-                                    Model theModel) {
+                                    Model theModel, @Valid @ModelAttribute("user") User theUser) {
         // search customers from the service
         List<User> theUsers = userService.searchRegisteredUsers(theRegisteredSearchName);
                 
@@ -104,6 +104,9 @@ public class UserController {
            return "registrationfailed";	
         }
         else
-        return "main-menu";        
+        {
+        	userService.saveUser(theUser);
+        	return "registersuccess";
+        }
     }
 }

@@ -120,11 +120,9 @@ margin-left: 4px;
 </style>
 <body>
 <div class="container">
-<<<<<<< HEAD:WebContent/WEB-INF/view/newlogin.jsp
-<form:form action="post" modelAttribute="customer">
-=======
+
 <form:form method="post" modelAttribute="user" action="/lpswithhibernate/user/search">
->>>>>>> 81981fe1f561b0e1bfac12ca39d9fadda9c86a5a:WebContent/WEB-INF/view/newlogin.html
+
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
@@ -144,7 +142,7 @@ margin-left: 4px;
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="text" class="form-control" name="theSearchPass" path="password" placeholder="password"/>
+						<input type="password" class="form-control" name="theSearchPass" path="password" placeholder="password"/>
 					</div>
 					
 					<div class="form-group">
@@ -154,11 +152,11 @@ margin-left: 4px;
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-<<<<<<< HEAD:WebContent/WEB-INF/view/newlogin.jsp
-					Don't have an account?<a href="user/register">Register</a>
-=======
+
+				
+
 					Don't have an account?<a href="/lpswithhibernate/user/register">Register</a>
->>>>>>> 81981fe1f561b0e1bfac12ca39d9fadda9c86a5a:WebContent/WEB-INF/view/newlogin.html
+
 				</div>
 				<div class="d-flex justify-content-center">
 					<a href="#">Forgot your password?</a>
