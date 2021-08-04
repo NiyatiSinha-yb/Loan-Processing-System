@@ -246,8 +246,7 @@ Swal.fire({
   showCancelButton: true,
   confirmButtonColor: '#3085d6',
   cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
-}).then((result) => {
+  confirmButtonText: 'Yes, delete it!'}).then((result) => {
   if (result.isConfirmed) {
     Swal.fire(
       'Deleted!',
@@ -265,7 +264,7 @@ return false;
 #customers {
 	font-family: Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
-	width: 60%;
+	width: 70%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -415,7 +414,7 @@ color: red;
 				</c:url>
 
 				<tr>
-					<td><a href="${updateLink}">${tempCustomer.ID}</a></td>
+					<td id="UpdatePage"><a href="${updateLink}"><b>${tempCustomer.ID}</b></a></td>
 					<td>${tempCustomer.firstName}</td>
 					<td>${tempCustomer.emailAddress}</td>
 					<td>${tempCustomer.submitted_Date}</td>

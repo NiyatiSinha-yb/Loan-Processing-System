@@ -27,7 +27,7 @@
 <!--Font Awesome (added because you use icons in your prepend/append)-->
 <link rel="stylesheet"
 	href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
-
+<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 
 
 
@@ -64,7 +64,7 @@ body {
 	margin-top: 60px;
 	margin-bottom: 60px; */
 	opacity: 95%;
-	width: 80%;
+	width: 69%;
 	border: none;
 	box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
 	border: none !important;
@@ -89,6 +89,12 @@ input, textarea, button {
 	border: 1px solid #ccc;
 	font-size: 18px !important;
 	font-weight: 300
+}
+#DownButton
+{
+	 float: right;
+	 margin-right:20px;
+	 border: 2px solid gray;
 }
 
 input:focus, textarea:focus {
@@ -126,8 +132,13 @@ button:focus {
 
 <body>
 	<br>
+	<button
+								class="inline-flex text-white bg-gray-600 border-0 py-2 px-6 focus:outline-none hover:bg-blue-500 rounded text-lg" id="DownButton" onclick="generatePDF()"
+								><p style ="color:white; padding-top: 5px">Download</p></button>
+								<span>&nbsp;</span>
+<!-- 	<button onclick="generatePDF()">Download</button> -->
 	<br>
-	<div class="container">
+	<div class="container" id="invoice">
 
 		<div class="card">
 			<h5 class="text-center mb-4">
@@ -430,11 +441,17 @@ button:focus {
 						</div>
 						
 					</div>
-				
+					
 				<br>
 				<br>
 				</body>
 				<script>
+				function generatePDF(){
+					const element=document.getElementById("invoice");
+					html2pdf()
+						.from(element)
+						.save();
+				}
 				function clearErrors(){
 
 				    errors = document.getElementsByClassName('formerror');

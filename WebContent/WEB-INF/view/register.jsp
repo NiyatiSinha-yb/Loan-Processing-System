@@ -74,7 +74,7 @@ select.form-control {
 .form-control::placeholder {
     color: #ccc;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1.6rem;
 }
 .form-control:focus {
     box-shadow: none;
@@ -108,7 +108,7 @@ select.form-control {
             <p class="font-italic text-muted mb-0">Create an account and apply for loan at zero cost!</p>
             
         </div>
-         <i class="fa-user-md text-muted"></i>
+       <!--   <i class="fa-user-md text-muted"></i> -->
 
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-6 ml-auto">
@@ -129,7 +129,7 @@ select.form-control {
 								
 								<i class="fa fa-user text-muted"></i>
 							<label for="uname">Last Name:</label> <form:input type="text"
-								class="form-control" placeholder="last Name"
+								class="form-control" placeholder="Last Name"
 								name="lastName" path="lastName" required="true"/>
 						</div>
 						</div>
