@@ -1,5 +1,8 @@
 # Loan-Processing-System
 
+A dynamic web based Loan Application, Management system for both user and client side.
+Please review the ppt file attached above to get deeper insights about the project.
+
 View src for backend.
 Visit Webcontent to view the jsp files.
 
